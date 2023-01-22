@@ -12,12 +12,12 @@
 	} 
 	else
 	{
-		// If email or phone number functionality is needed just add "OR Phone like ? OR Email like ?" inside the parenthesis.
-		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ?) and UserID=?");
+		// Prepares and executes mySQL statement to search Contacts Database for keywords 
+		// from binded input parameters and a specified UserID.
+		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ? OR Phone like ? OR Email like ?) and UserID=?");
 		$name = "%" . $inData["search"] . "%";
 
-		// Add "s" for each new column to search and add the variable name
-		$stmt->bind_param("sss", $name, $name, $inData["userId"]);
+		$stmt->bind_param("sssss", $name, $name, $name, $name, $inData["userID"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -29,8 +29,11 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			// $searchResults .= '"' . $row["Name"] . '"';
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
+			$searchResults .= 
+			'{"firstName" : "' . $row["FirstName"]. '",
+			  "lastName" : "' . $row["LastName"]. '",
+			  "phone" : "' . $row["Phone"]. '",
+			  "email" : "' . $row["Email"]. '"}';
 		}
 		
 		if( $searchCount == 0 )
@@ -59,7 +62,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"id":0,"FirstName":"","LastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

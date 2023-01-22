@@ -1,7 +1,8 @@
 <?php
 	$inData = getRequestInfo();
 	
-    $name = $inData["name"];
+	$firstName = $inData["firstName"];
+	$lastName = $inData["lastName"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
 	$userID = $inData["userID"];
@@ -13,8 +14,10 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Contacts (Name,Phone,Email,UserID) VALUES(?,?,?,?)");
-		$stmt->bind_param("ssss", $name, $phone, $email, $userID);
+		// Prepares and executes mySQL statement to add binded input parameters into 
+		// Contacts Database's respective columns.
+		$stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, UserID) VALUES(?,?,?,?,?)");
+		$stmt->bind_param("sssss", $firstName, $lastName, $phone, $email, $userID);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
