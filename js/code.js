@@ -15,7 +15,7 @@ function register() {
 
     document.getElementById("registerStatus").innerHTML = "";
 
-    let tmp = {FirstName: firstName, LastName: lastName, Username: username, Password: password};
+    let tmp = {firstName: firstName, lastName: lastName, login: username, password: password};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/Register' + extension;
@@ -44,7 +44,7 @@ function login() {
     let username = document.getElementById("usernameLogin").value;
     let password = document.getElementById("passwordLogin").value;
 
-    let tmp = {Username: username, Password: password};
+    let tmp = {login: username, password: password};
     let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -63,7 +63,7 @@ function login() {
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
-		
+                
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
 
@@ -115,4 +115,13 @@ function readCookie()
 	{
 		document.getElementById("Emaildisplay").innerHTML = Email;
 	}
+}
+
+function doLogout()
+{
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "index.html";
 }
