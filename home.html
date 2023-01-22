@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Homepage</title>
+   <meta name="description" content = "home page for website; contains information">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   
+   <header>
+      <h2>Welcome <span id=account-name></span></h2>
+      <a href="index.html">log out</a>
+   </header>
+
+   
+   <section id="info-input">
+      <h2>Search for existing Contact</h2>
+      <div class="container">
+         <form>
+            <input type="text" name="search" id="search" placeholder="contact intfo">
+         </form>
+      
+         <h2>Add new contact</h2>
+         <form action="" method="post" id="add-info">
+            <input type="text" id="contact-info-name-first" placeholder="First Name">
+            <input type="text" id="contact-info-name-last" placeholder="Last Name">
+            <input type="text" id="contact-info-email" placeholder="email@email.com">
+            <input type="text" id="contact-info-phone" placeholder="###-###-####">
+            <button type= "submit" id="add-contact-button" onclick="">Submit/button>
+         </form>
+      </div>
+
+   </section>
+   <section id="infoWindow">
+      <div class="container">
+         <table id="contact-table">
+            <thead>
+               <tr>
+                  <th scope = "col">First Name</th>
+                  <th scope = "col">Last Name</th>
+                  <th scope = "col">E-mail</th>
+                  <th scope = "col">Phone</th>
+               </tr>
+            </thead>
+
+         </table>
+      </div>
+   </section>
+
+   <footer>
+
+   </footer>
+
+   <script src="js/code.js"></script>
+</body>
+</html>
