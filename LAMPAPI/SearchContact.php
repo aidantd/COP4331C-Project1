@@ -12,9 +12,12 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("select Name from Contacts where Name like ? and UserID=?");
+		// If email or phone number functionality is needed just add "OR Phone like ? OR Email like ?" inside the parenthesis.
+		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ?) and UserID=?");
 		$name = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ss", $name, $inData["userId"]);
+
+		// Add "s" for each new column to search and add the variable name
+		$stmt->bind_param("sss", $name, $name, $inData["userId"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -26,7 +29,8 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
+			// $searchResults .= '"' . $row["Name"] . '"';
+			$searchResults .= '{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
 		}
 		
 		if( $searchCount == 0 )
