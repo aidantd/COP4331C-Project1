@@ -18,7 +18,7 @@ function register() {
     let tmp = {firstName: firstName, lastName: lastName, login: username, password: password};
     let jsonPayload = JSON.stringify(tmp);
 
-    let url = urlBase + '/Register' + extension;
+    let url = urlBase + '/Register.' + extension;
     console.log(tmp);
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -121,3 +121,4 @@ function doLogout() {
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 	window.location.href = "index.html";
 }
+
