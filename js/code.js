@@ -5,12 +5,12 @@ function register() {
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
 
-    let email = document.getElementById("newEmail").value;
+    let username = document.getElementById("newUserName").value;
     let password = document.getElementById("newPassword");
 
     document.getElementById("registerStatus").innerHTML = "";
 
-    let tmp = {firstName: firstName, LastName: lastName, Email: email, Password: password};
+    let tmp = {firstName: firstName, LastName: lastName, Username: username, Password: password};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/Register' + extension;
@@ -32,4 +32,8 @@ function register() {
     catch(err) {
         document.getElementById("registerItem").innerHTM = "Failed To Register";
     }
+}
+
+function login() {
+  
 }
