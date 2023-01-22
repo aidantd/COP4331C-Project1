@@ -64,6 +64,8 @@ function login() {
 					return;
 				}
                 
+                // May need api people to change the name of the ID return to Id for usability in js 
+                userId = jsonObject.ID;
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
 
