@@ -1,5 +1,52 @@
+<!DOCTYPE html>
 <html>
-	<body>
-		<h1>We love COP4331 (Github Test)</h1>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="css/login.css">
+        <!--remind self to put any JS refs and other refs here-->
+    </head>
+
+    <body>
+        <h2 class="welcome">Welcome to (sitename)</h2>
+        <div class="loginregisterbuttons">
+            <!--login/signup buttons to swap between-->
+            <div class="regbuttons">
+                <button type="button">Register</button>
+                <button type="button">Login</button>
+            </div>
+
+
+            <!--login form-->
+            <form class="loginform">
+                <input type="text" class="formboxes" placeholder="username" name="username" required>
+                <input type="text" class="formboxes" placeholder="password" name="password" required>
+                <button type="button">Login</button>
+            </form>
+
+            <!--register form-->
+            <form class="registerform">
+                <input type="text" class="formboxes" placeholder="First Name" name="First Name" required>
+                <input type="text" class="formboxes" placeholder="Last Name" name="Last Name" required>
+                <input type="text" class="formboxes" placeholder="username" name="username" required>
+                <input type="text" class="formboxes" placeholder="password" name="password" required>
+                <button type="button">Register</button>
+            </form>
+
+
+        </div>
+
+    </body>
+
+
 </html>
+
+
+<!--OTHER NOTES TO SELF
+- add classes for register/login buttons for css/js later
+- register side should have requirements to be checked for user/pass
+- remember to do logo
+-- add script ref
+- below/above welcome possibly add logo or sign up/login
+- put text in for when signup/login fails or when something is invalid
+-->
