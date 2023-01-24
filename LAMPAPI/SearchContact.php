@@ -12,9 +12,12 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("select Name from Contacts where Name like ? and UserID=?");
+		// Prepares and executes mySQL statement to search Contacts Database for keywords 
+		// from binded input parameters and a specified UserID.
+		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ? OR Phone like ? OR Email like ?) and UserID=?");
 		$name = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ss", $name, $inData["userId"]);
+
+		$stmt->bind_param("sssss", $name, $name, $name, $name, $inData["userID"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -26,7 +29,11 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
+			$searchResults .= 
+			'{"firstName" : "' . $row["FirstName"]. '",
+			  "lastName" : "' . $row["LastName"]. '",
+			  "phone" : "' . $row["Phone"]. '",
+			  "email" : "' . $row["Email"]. '"}';
 		}
 		
 		if( $searchCount == 0 )
@@ -55,7 +62,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"id":0,"FirstName":"","LastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
