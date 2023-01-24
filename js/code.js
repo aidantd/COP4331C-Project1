@@ -5,6 +5,20 @@ let userId  = 0;
 let firstName = "";
 let lastName = "";
 
+let registerSlider = document.querySelector(".signup");
+let loginSlider = document.querySelector(".login");
+let slider = document.querySelector(".slider");
+let formSection = document.querySelector(".form-section");
+  
+registerSlider.addEventListener("click", () => {
+    slider.classList.add("moveslider");
+    formSection.classList.add("form-section-move");
+});
+  
+loginSlider.addEventListener("click", () => {
+    slider.classList.remove("moveslider");
+    formSection.classList.remove("form-section-move");
+});
 
 function register() {
     firstName = document.getElementById("firstName").value;
@@ -14,6 +28,11 @@ function register() {
     let password = document.getElementById("newPassword").value;
 
     document.getElementById("registerStatus").innerHTML = "";
+
+	if(firstName === "" || lastName === "" || username === "" || password === "") {
+		document.getElementById("registerStatus").innerHTML = "All fields are required";
+		return;
+	}
 
     let tmp = {firstName: firstName, lastName: lastName, login: username, password: password};
     let jsonPayload = JSON.stringify(tmp);
