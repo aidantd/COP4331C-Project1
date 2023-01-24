@@ -29,6 +29,11 @@ function register() {
 
     document.getElementById("registerStatus").innerHTML = "";
 
+	if(firstName === "" || lastName === "" || username === "" || password === "") {
+		document.getElementById("registerStatus").innerHTML = "All fields are required";
+		return;
+	}
+
     let tmp = {firstName: firstName, lastName: lastName, login: username, password: password};
     let jsonPayload = JSON.stringify(tmp);
 
