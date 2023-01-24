@@ -83,7 +83,7 @@ function login() {
 					return;
 				}
 				firstName = jsonObject.firstName;
-				lastName = jsonObject.fastName;
+				lastName = jsonObject.lastName;
 
 				saveCookie();
 	
