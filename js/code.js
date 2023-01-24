@@ -57,17 +57,14 @@ function login() {
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId  = jsonObject.id;
+				userId  = jsonObject.ID;
 		
 				if(userId < 1) {		
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
-                
-                // May need api people to change the name of the ID return to Id for usability in js 
-                userId = jsonObject.ID;
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				firstName = jsonObject.FirstName;
+				lastName = jsonObject.LastName;
 
 				saveCookie();
 	
