@@ -35,7 +35,7 @@ function register() {
         xhr.send(jsonPayload);
     } 
     catch(err) {
-        document.getElementById("registerItem").innerHTM = err.message;
+        document.getElementById("registerStatus").innerHTM = err.message;
     }
 }
 
@@ -82,7 +82,7 @@ function saveCookie() {
 	let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "Email=" + Email + ",userId =" + userId  + ";expires=" + date.toGMTString();
+	document.cookie = "UserId =" + userId  + ";expires=" + date.toGMTString();
 }
 
 function readCookie() {
