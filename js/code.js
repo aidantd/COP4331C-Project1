@@ -35,7 +35,7 @@ function register() {
         xhr.send(jsonPayload);
     } 
     catch(err) {
-        document.getElementById("registerItem").innerHTM = err.message;
+        document.getElementById("registerStatus").innerHTM = err.message;
     }
 }
 
