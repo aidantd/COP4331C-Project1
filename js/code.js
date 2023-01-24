@@ -82,8 +82,8 @@ function login() {
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
-				firstName = jsonObject.FirstName;
-				lastName = jsonObject.LastName;
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.fastName;
 
 				saveCookie();
 	
