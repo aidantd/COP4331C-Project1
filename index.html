@@ -11,28 +11,30 @@
     <body>
         <h2 class="welcome">Welcome to (sitename)</h2>
         <div class="loginregisterbuttons">
+            
+            <div class="slider"></div>
             <!--login/signup buttons to swap between-->
             <div class="regbuttons">
-                <button type="button">Register</button>
-                <button type="button">Login</button>
+                <button class="register" type="button">Register</button>
+                <button class="login" type="button">Login</button>
             </div>
 
 
             <!--login form-->
-            <form class="loginform">
+            <div class="loginform">
                 <input id="usernameLogin" type="text" class="formboxes" placeholder="username" name="username" required>
                 <input id="passwordLogin" type="text" class="formboxes" placeholder="password" name="password" required>
                 <button id="loginResult" type="button" onclick="login();">Login</button>
-            </form>
+            </div>
 
             <!--register form-->
-            <form class="registerform">
+            <div class="registerform">
                 <input id="firstName" type="text" class="formboxes" placeholder="First Name" name="First Name" required>
                 <input id="lastName" type="text" class="formboxes" placeholder="Last Name" name="Last Name" required>
                 <input id="newUserName" type="text" class="formboxes" placeholder="username" name="username" required>
                 <input id="newPassword" type="text" class="formboxes" placeholder="password" name="password" required>
                 <button id="registerStatus" type="button" onclick="register();">Register</button>
-            </form>
+            </div>
 
 
         </div>
