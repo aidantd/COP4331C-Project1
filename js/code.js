@@ -82,7 +82,7 @@ function saveCookie() {
 	let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "Email=" + Email + ",userId =" + userId  + ";expires=" + date.toGMTString();
+	document.cookie = "UserId =" + userId  + ";expires=" + date.toGMTString();
 }
 
 function readCookie() {
