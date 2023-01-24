@@ -5,8 +5,8 @@ let userId  = 0;
 let firstName = "";
 let lastName = "";
 
-let registerSlider = document.querySelector(".signup");
-let loginSlider = document.querySelector(".login");
+let registerSlider = document.querySelector(".registerSlider");
+let loginSlider = document.querySelector(".loginSlider");
 let slider = document.querySelector(".slider");
 let formSection = document.querySelector(".form-section");
   
