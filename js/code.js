@@ -117,7 +117,7 @@ function readCookie() {
 		else if(tokens[0] == "lastName") {
 			lastName = tokens[1];
 		}
-		else if(tokens[0] == "userId") {
+		else if(tokens[0] == "UserId") {
 			userId = parseInt(tokens[1].trim());
 		}
 	}
