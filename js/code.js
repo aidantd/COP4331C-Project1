@@ -195,3 +195,33 @@ function addContact() {
         document.getElementById("contactAddStatus").innerHTM = err.message;
     }
 }
+
+function deleteContact(i) {
+	let firstName = document.getElementById("firstName[" + i + "]").value;
+	let lastName = document.getElementById("lastName[" + i + "]").value;
+	let phoneNumber = document.getElementById("phoneNumber[" + i + "]").value;
+	let email = document.getElementById("email[" + i + "]").value;
+
+	let tmp = {firstName: firstName, lastName: lastName, phone: phoneNumber, email: email};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/DeleteContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try {
+        xhr.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                let jsonObject= JSON.parse( xhr.responseText);
+                document.getElementById("deleteStatus").innerHTML = "Successfully Deleted Contact";
+                return;
+            }
+        };
+        xhr.send(jsonPayload);
+    } 
+    catch(err) {
+        document.getElementById("deleteStatus").innerHTM = err.message;
+    }
+}
