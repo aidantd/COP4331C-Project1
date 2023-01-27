@@ -24,19 +24,22 @@
                    <div class="loginform">
                       <input id="usernameLogin" type="text" class="formboxes" placeholder="username" name="username" required>
                       <input id="passwordLogin" type="text" class="formboxes" placeholder="password" name="password" required>
-                      <button id="loginButton" type="button" onclick="login();">Login</button>
+                      <button id="loginButton" type="button" onclick="login()">Login</button>
                        <span id="loginResult"></span>
                 </div>
 
                    <!--register form-->
                    <div action="">
-                  <div class="form-group">
-                         <input id="firstName" type="text" class="formboxes" placeholder="First Name" name="First Name" required>
-                         <input id="lastName" type="text" class="formboxes" placeholder="Last Name" name="Last Name" required>
-                         <input id="newUserName" type="text" class="formboxes" placeholder="username" name="username" required>
-                         <input id="newPassword" type="text" class="formboxes" placeholder="password" name="password" required>
-                         <button class="btn btn-primary" id="registerButton" type="button" onclick="register();">Register</button>
-                  </div>
+                  <form>
+                     <div class="form-group">
+                        <input id="firstName" type="text" class="formboxes" placeholder="First Name" name="First Name" required>
+                        <input id="lastName" type="text" class="formboxes" placeholder="Last Name" name="Last Name" required>
+                        <input id="newUserName" type="text" class="formboxes" placeholder="username" name="username" required>
+                        <input id="newPassword" type="text" class="formboxes" placeholder="password" name="password" required>
+                        <button class="btn btn-primary" id="registerButton" type="button" onclick="register()">Register</button>
+                     </div>
+                  </form>
+                     
                        <span id="registerStatus"></span>
                 </div>               <form class="registerform">
                   
