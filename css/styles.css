@@ -1,6 +1,6 @@
 :root{
-   --blue:#5B9CE9;
-   --blue-navy:#2F51A2;
+   --blue:#5b9be9;
+   --blue-navy:#294588;
    --off-white:#F5F5F5;
 }
 
@@ -21,7 +21,19 @@ body{
    color:white
 }
 
+/* buttons */
+.btn-blue-navy{
+   background:var(--blue-navy) !important;
+   color:white !important;
+}
+
 /* icons */
 .icon-md{
    font-size:30px;
 }
+
+/* navbar */
+.nav-link{
+   
+}
+
