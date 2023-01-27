@@ -173,7 +173,7 @@ function addContact() {
 	let firstNameAdd = document.getElementById("contact-info-name-first").value;
 	let lastNameAdd = document.getElementById("contact-info-name-last").value;
 	let phoneNumberAdd = document.getElementById("contact-info-email").value;
-	let emailAdd = document.getElementById("contact-info-phone").value;
+	let emailAdd = document.getElementById("contact-info-email").value;
 
 	let tmp = {firstName: firstNameAdd, lastName: lastNameAdd, phone: phoneNumberAdd, email: emailAdd, userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
