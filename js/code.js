@@ -126,7 +126,7 @@ function readCookie() {
 		window.location.href = "index.html";
 	}
 	else {
-		document.getElementById("userNameDisplay").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("loggedInUser").innerHTML = firstName + " " + lastName;
 	}
 }
 
