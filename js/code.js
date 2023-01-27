@@ -164,3 +164,34 @@ function getContactInfo() {
 		document.getElementById("contactInfo").innerHTML = err.message;
 	}
 }
+
+function addContact() {
+	let firstName = document.getElementById("firstNameAdd").value;
+	let lastName = document.getElementById("lastNameAdd").value;
+	let phoneNumber = document.getElementById("phoneNumberAdd").value;
+	let email = document.getElementById("emailAdd").value;
+	let userId = userId;
+
+	let tmp = {firstName: firstNameAdd, lastName: lastNameAdd, phone: phoneNumberAdd, email: emailAdd, userID: userId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/AddContact.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try {
+        xhr.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                let jsonObject= JSON.parse( xhr.responseText);
+                document.getElementById("contactAddStatus").innerHTML = "Successfully Added Contact";
+                return;
+            }
+        };
+        xhr.send(jsonPayload);
+    } 
+    catch(err) {
+        document.getElementById("contactAddStatus").innerHTM = err.message;
+    }
+}
