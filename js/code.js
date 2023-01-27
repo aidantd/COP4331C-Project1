@@ -126,7 +126,7 @@ function readCookie() {
 		window.location.href = "index.html";
 	}
 	else {
-		document.getElementById("userNameDisplay").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("loggedInUser").innerHTML = firstName + " " + lastName;
 	}
 }
 
@@ -153,7 +153,11 @@ function getContactInfo() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + "</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + "</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber + "</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + "</td></tr><button type='button' onclick='deleteContact(" + i + ")'>Delete</button>";
+					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
+					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
+					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
 				document.getElementById("contactInfo").innerHTML = html;
 			}
@@ -166,11 +170,10 @@ function getContactInfo() {
 }
 
 function addContact() {
-	let firstNameAdd = document.getElementById("firstNameAdd").value;
-	let lastNameAdd = document.getElementById("lastNameAdd").value;
-	let phoneNumberAdd = document.getElementById("phoneNumberAdd").value;
-	let emailAdd = document.getElementById("emailAdd").value;
-	let userId = userId;
+	let firstNameAdd = document.getElementById("contact-info-name-first").value;
+	let lastNameAdd = document.getElementById("contact-info-name-last").value;
+	let phoneNumberAdd = document.getElementById("contact-info-email").value;
+	let emailAdd = document.getElementById("contact-info-email").value;
 
 	let tmp = {firstName: firstNameAdd, lastName: lastNameAdd, phone: phoneNumberAdd, email: emailAdd, userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
