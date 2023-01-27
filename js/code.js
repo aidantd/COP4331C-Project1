@@ -166,10 +166,10 @@ function getContactInfo() {
 }
 
 function addContact() {
-	let firstName = document.getElementById("firstNameAdd").value;
-	let lastName = document.getElementById("lastNameAdd").value;
-	let phoneNumber = document.getElementById("phoneNumberAdd").value;
-	let email = document.getElementById("emailAdd").value;
+	let firstNameAdd = document.getElementById("firstNameAdd").value;
+	let lastNameAdd = document.getElementById("lastNameAdd").value;
+	let phoneNumberAdd = document.getElementById("phoneNumberAdd").value;
+	let emailAdd = document.getElementById("emailAdd").value;
 	let userId = userId;
 
 	let tmp = {firstName: firstNameAdd, lastName: lastNameAdd, phone: phoneNumberAdd, email: emailAdd, userID: userId};
