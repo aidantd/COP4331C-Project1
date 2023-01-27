@@ -12,7 +12,9 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-   <header class="bg-blue-navy pt-3 pb-3">
+   
+   <!-- upper header bar -->
+   <header class="bg-blue-navy py-2">
       <div class="container-xxl">
          <div class="row justify-content-center align-items-center">
             <div class="col">
@@ -30,9 +32,9 @@
             </div>
          </div>
       </div>
-
    </header>
 
+   <!-- secondary bar for navigation -->
    <section id="navigation">
       <nav class="navbar navbar-expand-md bg-blue p-0">
          <div class="container-xxl text-center">
@@ -62,20 +64,34 @@
 
    
    <section id="info-input">
-      <div class="container">
-         <h2>Search for existing Contact</h2>
-         <form>
-            <input type="search" name="search" id="search" class="form-control inline-block" placeholder="contact info">
-         </form>
+      <div class="container-xxl">
+         <div class="text-center pt-3" id="search-group">
+            <form>
+               <label for="search" class="pb-2">
+                  <span class="h4">Search For Existing Contact</span>
+               </label>
+               <input type="search" name="search" id="search" class="form-control inline-block" placeholder="contact info">
+            </form>
+         </div>
+         
+         <div class="text-center mt-3" id="add-group">
+            <button type="button" class="btn btn-blue-navy" data-bs-toggle="collapse" data-bs-target="#add-form">+ Add Contact</button>
+            <div class="collapse mt-2" id="add-form">
+               <form action="" method="post" id="add-info">
+                  <label for="search" class="pb-2">
+                     <span class="h4">Add New Contact</span>
+                  </label>
+                  <input type="text" id="contact-info-name-first" class="form-control" placeholder="First Name">
+                  <input type="text" id="contact-info-name-last" class="form-control" placeholder="Last Name">
+                  <input type="text" id="contact-info-email" class="form-control" placeholder="email@email.com">
+                  <input type="text" id="contact-info-phone"  class="form-control"placeholder="###-###-####">
+                  <button class = "btn btn-blue-navy mt-2" type="submit inline" id="add-contact-button" onclick="">Submit</button>
+               </form>
+            </div>
+         
+         </div>
       
-         <h2>Add new contact</h2>
-         <form action="" method="post" id="add-info">
-            <input type="text" id="contact-info-name-first" class="form-control" placeholder="First Name">
-            <input type="text" id="contact-info-name-last" class="form-control" placeholder="Last Name">
-            <input type="text" id="contact-info-email" class="form-control" placeholder="email@email.com">
-            <input type="text" id="contact-info-phone"  class="form-control"placeholder="###-###-####">
-            <button class = "btn btn-primary" type="submit inline" id="add-contact-button" onclick="">Submit</button>
-         </form>
+         
       </div>
 
    </section>
