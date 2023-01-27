@@ -1,0 +1,27 @@
+:root{
+   --blue:#5B9CE9;
+   --blue-navy:#2F51A2;
+   --off-white:#F5F5F5;
+}
+
+body{
+   background-color:var(--off-white) !important;
+}
+
+/* background stylings */
+.bg-blue{
+   background-color:var(--blue) !important; 
+}
+.bg-blue-navy{
+   background-color:var(--blue-navy) !important;
+}
+
+.bi-box-arrow-right{
+   background: transparent;
+   color:white
+}
+
+/* icons */
+.icon-md{
+   font-size:30px;
+}
