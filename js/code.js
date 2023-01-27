@@ -153,7 +153,11 @@ function getContactInfo() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + "</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + "</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber + "</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + "</td></tr><button type='button' onclick='deleteContact(" + i + ")'>Delete</button>";
+					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
+					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
+					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
 				document.getElementById("contactInfo").innerHTML = html;
 			}
