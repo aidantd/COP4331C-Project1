@@ -19,7 +19,7 @@
 
       </header>
       <section id="inputs">
-         <div class="container-sm">
+         <div class="container-sm text-center">
             <h2 class="welcome">Welcome to (sitename)</h2>
             <span id="userNameDisplay"></span>
             <div class="loginregisterbuttons">
@@ -31,19 +31,21 @@
             </div>
             <div class="form-section">
                <!--login form-->
-               <div class="loginform">
-                  <input id="usernameLogin" type="text" class="formboxes" placeholder="username" name="username" required>
-                  <input id="passwordLogin" type="text" class="formboxes" placeholder="password" name="password" required>
-                  <button id="loginButton" type="button" onclick="login()">Login</button>
-                  <span id="loginResult"></span>
-               </div>
+               <form>
+                  <div class="form-group mb-3 text-center" id="loginform">
+                     <input id="usernameLogin" type="text" class="form-control" placeholder="username" name="username" required>
+                     <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
+                     <button id="loginButton" type="button" class="btn btn-blue-navy mt-3" onclick="login()">Login</button>
+                     <span id="loginResult"></span>
+                  </div>
+               </form> 
                    <!--register form-->
-               <form class="registerform">
-                  <div class="form-group mb-3 text-center" id="register"form>
+               <form>
+                  <div class="form-group mb-3 text-center" id="register-form">
                      <input id="firstName" type="text" class="form-control" placeholder="First Name" name="First Name" required>
                      <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="Last Name" required>
                      <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
-                     <input id="newPassword" type="text" class="form-control" placeholder="password" name="password" required>
+                     <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
                      <button class="btn btn-blue-navy mt-3" id="registerButton" type="button" onclick="register()">Register</button>
                   </div>
                </form>
