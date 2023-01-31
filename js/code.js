@@ -158,11 +158,12 @@ function showAllContacts() {
 					return;
 				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
+					html += "<tbody><tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				document.getElementById("allContactInfo").innerHTML = html;
 			}
@@ -195,11 +196,12 @@ function searchContact() {
 					return;
 				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
+					html += "<tbody><tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				document.getElementById("allContactInfo").innerHTML = html;
 			}
