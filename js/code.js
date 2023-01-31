@@ -173,6 +173,42 @@ function showAllContacts() {
 	}
 }
 
+function searchContact() {
+	let search = document.getElementById("searchUser").value;
+	let tmp = {search: search, userID: userId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/SearchContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try {
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200) {
+				let jsonObject = JSON.parse(xhr.responseText);
+				if(jsonObject.id == 0) {
+					document.getElementById("contactResult").innerHTML = "No Contacts";
+					return;
+				}
+				for(let i = 0; i < jsonObject.results.length; i++) {
+					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
+					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
+					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
+				}
+				document.getElementById("allContactInfo").innerHTML = html;
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err) {
+		document.getElementById("allContactInfo").innerHTML = err.message;
+	}
+}
+
 function addContact() {
 	let firstNameAdd = document.getElementById("contact-info-name-first").value;
 	let lastNameAdd = document.getElementById("contact-info-name-last").value;
