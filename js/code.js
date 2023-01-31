@@ -200,7 +200,7 @@ function searchContact() {
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
-				document.getElementById("searchContactInfo").innerHTML = html;
+				document.getElementById("allContactInfo").innerHTML = html;
 			}
 		};
 		xhr.send(jsonPayload);
