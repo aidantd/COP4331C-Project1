@@ -164,7 +164,7 @@ function showAllContacts() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -204,7 +204,7 @@ function searchContact() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -247,13 +247,11 @@ function addContact() {
     }
 }
 
-function deleteContact(i) {
-	let firstName = document.getElementById("firstName[" + i + "]").value;
-	let lastName = document.getElementById("lastName[" + i + "]").value;
-	let phoneNumber = document.getElementById("phoneNumber[" + i + "]").value;
-	let email = document.getElementById("email[" + i + "]").value;
+function deleteContact(num) {
+	let firstName = document.getElementById("firstName[" + num + "]").value;
+	let lastName = document.getElementById("lastName[" + num + "]").value;
 
-	let tmp = {firstName: firstName, lastName: lastName, phone: phoneNumber, email: email};
+	let tmp = {firstName: firstName, lastName: lastName,userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/DeleteContact.' + extension;
@@ -277,13 +275,13 @@ function deleteContact(i) {
     }
 }
 
-function editContact(i) {
-	let firstName = document.getElementById("firstName[" + i + "]").value;
-	let lastName = document.getElementById("lastName[" + i + "]").value;
-	let phoneNumber = document.getElementById("phoneNumber[" + i + "]").value;
-	let email = document.getElementById("email[" + i + "]").value;
+function editContact(num, id) {
+	let firstName = document.getElementById("firstName[" + num + "]").value;
+	let lastName = document.getElementById("lastName[" + num + "]").value;
+	let phoneNumber = document.getElementById("phoneNumber[" + num + "]").value;
+	let email = document.getElementById("email[" + num + "]").value;
 
-	let tmp = {firstName: firstName, lastName: lastName, phone: phoneNumber, email: email};
+	let tmp = {firstName: firstName, lastName: lastName, phone: phoneNumber, email: email, id: id};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/UpdateContact.' + extension;
