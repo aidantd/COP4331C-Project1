@@ -138,11 +138,11 @@ function doLogout() {
 	window.location.href = "index.html";
 }
 
-function getContactInfo() {
+function showAllContacts() {
 	let tmp = {userId: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
-	let url = urlBase + '/GetContactInfo.' + extension;
+	let url = urlBase + '/SearchContact.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -159,7 +159,7 @@ function getContactInfo() {
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
-				document.getElementById("contactInfo").innerHTML = html;
+				document.getElementById("allContactInfo").innerHTML = html;
 			}
 		};
 		xhr.send(jsonPayload);
