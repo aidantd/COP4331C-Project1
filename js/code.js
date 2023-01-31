@@ -153,7 +153,7 @@ function showAllContacts() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button>" + 
+					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + ")'>Edit</button>" + 
 					"<button type='button' id='saveButton[" + i + "] onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")' style='display: none'>Save</button>" +
 					"<button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
