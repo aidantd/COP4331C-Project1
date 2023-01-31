@@ -157,11 +157,11 @@ function showAllContacts() {
 					return;
 				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<tbody><tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
+					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
 				document.getElementById("allContactInfo").innerHTML = html;
 			}
