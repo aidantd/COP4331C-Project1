@@ -162,7 +162,7 @@ function showAllContacts() {
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					html += "<tbody><tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
-					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phoneNumber +
+					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
@@ -197,14 +197,16 @@ function searchContact() {
 					document.getElementById("searchContactInfo").innerHTML = "No Contacts";
 					return;
 				}
+				html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
+				html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 					html += "<tbody><tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
+				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
 			}
 		};
