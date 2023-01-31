@@ -139,7 +139,7 @@ function doLogout() {
 }
 
 function showAllContacts() {
-	let tmp = {userId: userId};
+	let tmp = {name: "", name: "", name: "", name: "", userId: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/SearchContact.' + extension;
@@ -165,7 +165,7 @@ function showAllContacts() {
 		xhr.send(jsonPayload);
 	}
 	catch(err) {
-		document.getElementById("contactInfo").innerHTML = err.message;
+		document.getElementById("allContactInfo").innerHTML = err.message;
 	}
 }
 
