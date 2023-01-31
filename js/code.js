@@ -168,7 +168,9 @@ function showAllContacts() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button>" + 
+					"<button type='button' id='saveButton[" + i + "] onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")' style='display: none'>Save</button>" +
+					"<button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -212,7 +214,9 @@ function searchContact() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button>" + 
+					"<button type='button' id='saveButton[" + i + "] onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")' style='display: none'>Save</button>" +
+					"<button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -283,32 +287,57 @@ function deleteContact(num) {
     }
 }
 
-function editContact(num, id) {
-	let firstName = document.getElementById("firstName[" + num + "]").innerText;
-	let lastName = document.getElementById("lastName[" + num + "]").innerText;
-	let phoneNumber = document.getElementById("phoneNumber[" + num + "]").innerText;
-	let email = document.getElementById("email[" + num + "]").innerText;
+function editContact(num) {
+    document.getElementById("editButton[" + num + "]").style.display = "none";
+    document.getElementById("saveButton[" + num + "]").style.display = "inline-block";
 
-	let tmp = {firstName: firstName, lastName: lastName, phone: phoneNumber, email: email, id: id};
-	let jsonPayload = JSON.stringify(tmp);
+    var firstNameVal = document.getElementById("firstName[" + num + "]");
+    var lastNameVal = document.getElementById("lastName[" + num + "]");
+    var emailVal = document.getElementById("phoneNumber[" + num + "]");
+    var phoneVal = document.getElementById("email[" + num + "]");
 
-	let url = urlBase + '/UpdateContact.' + extension;
+    var firstNameData = firstNameVal.innerText;
+    var lastNameData = lastNameVal.innerText;
+    var emailData = emailVal.innerText;
+    var phoneData = phoneVal.innerText;
 
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    firstNameVal.innerHTML = "<input type='text' id='firstNameData[" + num + "]' value='" + firstNameData + "'>";
+    lastNameVal.innerHTML = "<input type='text' id='lastNameData[" + num + "]' value='" + lastNameData + "'>";
+    emailVal.innerHTML = "<input type='text' id='emailData[" + num + "]' value='" + emailData + "'>";
+    phoneVal.innerHTML = "<input type='text' id='phoneData[" + num + "]' value='" + phoneData + "'>"
+}
 
-	try {
-        xhr.onreadystatechange = function() {
-            if(this.readyState == 4 && this.status == 200) {
-                let jsonObject= JSON.parse( xhr.responseText);
-                document.getElementById("editStatus").innerHTML = "Successfully Edited Contact";
-                return;
+function saveContact(num, id) {
+    var firstNameData = document.getElementById("firstNameData[" + num + "]").value;
+    var lastNameData = document.getElementById("lastNameData[" + num + "]").value;
+    var emailData = document.getElementById("emailData[" + num + "]").value;
+    var phoneData = document.getElementById("phoneData[" + num + "]").value;
+
+    document.getElementById("firstName[" + num + "]").innerHTML = firstNameData;
+    document.getElementById("lastName[" + num + "]").innerHTML = lastNameData;
+    document.getElementById("phoneNumber[" + num + "]").innerHTML = emailData;
+    document.getElementById("email[" + num + "]").innerHTML = phoneData;
+
+    document.getElementById("edit_button" + no).style.display = "inline-block";
+    document.getElementById("save_button" + no).style.display = "none";
+
+    let tmp = {firstName: firstNameData, lastName: lastNameData, phone: phoneData, email: emailData, id: id};
+
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/UpdateContacts.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("Contact has been updated");
             }
         };
         xhr.send(jsonPayload);
-    } 
-    catch(err) {
-        document.getElementById("deleteStatus").innerHTM = err.message;
+    } catch (err) {
+        console.log(err.message);
     }
 }
