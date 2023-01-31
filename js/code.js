@@ -1,10 +1,6 @@
 const urlBase = 'http://cop4331-5.xyz/LAMPAPI';
 const extension = 'php';
 
-let userId  = 0;
-let firstName = "";
-let lastName = "";
-
 function register() {
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
@@ -153,10 +149,7 @@ function showAllContacts() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td>" +
-					"<button type='button' id='editButton[" + i + "] onclick='editContact(" + i + ")'>Edit</button>" + 
-					"<button type='button' id='saveButton[" + i + "] onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")' style='display: none'>Save</button>" +
-					"<button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -200,9 +193,7 @@ function searchContact() {
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
-					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + ")'>Edit</button>" + 
-					"<button type='button' id='saveButton[" + i + "] onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")' style='display: none'>Save</button>" +
-					"<button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					"</td><td><button type='button' id='editButton[" + i + "] onclick='editContact(" + i + "," + jsonObject.results[i].id + ")'>Edit</button><button type='button' id='deleteButton[" + i + "] onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
