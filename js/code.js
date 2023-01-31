@@ -248,8 +248,8 @@ function addContact() {
 }
 
 function deleteContact(num) {
-	let firstName = document.getElementById("firstName[" + num + "]").value;
-	let lastName = document.getElementById("lastName[" + num + "]").value;
+	let firstName = document.getElementById("firstName[" + num + "]").innerText;
+	let lastName = document.getElementById("lastName[" + num + "]").innerText;
 
 	let tmp = {firstName: firstName, lastName: lastName,userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
