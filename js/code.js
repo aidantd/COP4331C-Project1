@@ -139,7 +139,7 @@ function doLogout() {
 }
 
 function showAllContacts() {
-	let tmp = {search: "", UserID: userId};
+	let tmp = {search: "", userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/SearchContact.' + extension;
