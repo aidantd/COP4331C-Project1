@@ -158,6 +158,7 @@ function showAllContacts() {
 					html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
 					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 					html += "</table></div></section>";
+					document.getElementById("allContactInfo").innerHTML = html;
 					return;
 				}
 				html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
@@ -201,6 +202,7 @@ function searchContact() {
 					html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
 					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 					html += "</table></div></section>";
+					document.getElementById("allContactInfo").innerHTML = html;
 					return;
 				}
 				html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
