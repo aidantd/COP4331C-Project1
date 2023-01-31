@@ -152,6 +152,7 @@ function showAllContacts() {
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
+				let html = "";
 				if(jsonObject.id == 0) {
 					return;
 				}
@@ -187,6 +188,7 @@ function searchContact() {
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
+				let html = "";
 				if(jsonObject.id == 0) {
 					document.getElementById("searchContactInfo").innerHTML = "No Contacts";
 					return;
