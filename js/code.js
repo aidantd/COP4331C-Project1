@@ -153,7 +153,6 @@ function showAllContacts() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
 				if(jsonObject.id == 0) {
-					document.getElementById("contactResult").innerHTML = "No Contacts";
 					return;
 				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
@@ -189,7 +188,7 @@ function searchContact() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
 				if(jsonObject.id == 0) {
-					document.getElementById("contactResult").innerHTML = "No Contacts";
+					document.getElementById("searchContactInfo").innerHTML = "No Contacts";
 					return;
 				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
@@ -199,13 +198,13 @@ function searchContact() {
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td><button type='button' onclick='editContact(" + i + ")'>Edit</button><button type='button' onclick='deleteContact(" + i + ")'>Delete</button></td></tr>";
 				}
-				document.getElementById("allContactInfo").innerHTML = html;
+				document.getElementById("searchContactInfo").innerHTML = html;
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err) {
-		document.getElementById("allContactInfo").innerHTML = err.message;
+		document.getElementById("searchContactInfo").innerHTML = err.message;
 	}
 }
 

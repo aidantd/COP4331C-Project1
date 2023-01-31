@@ -74,6 +74,12 @@
                </label>
                <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info">
                <button type="submit inline" id="search-button" onclick="searchContact();">Search</button>
+               <script>
+                  document.getElementById("search-button").addEventListener("click", function(){
+                      event.preventDefault();
+                  });
+               </script>
+               <span id="searchContactInfo"></span>
             </form>
          </div>
          
