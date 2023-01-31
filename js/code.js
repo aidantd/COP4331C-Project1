@@ -152,6 +152,10 @@ function showAllContacts() {
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
+				if(jsonObject.id == 0) {
+					document.getElementById("contactResult").innerHTML = "No Contacts";
+					return;
+				}
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					html += "<tr><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
 					"</td><td id='lastName[" + i + "]'>" + jsonObject.results[i].lastName + 
