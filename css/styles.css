@@ -51,13 +51,6 @@ body{
 
 
 
-.container-sm {
-   width: 780px; /*note to self: being overriddedn by border-box*/
-   height: 780px;
-   position: relative;
-   margin: 2% auto;
-   overflow: hidden; /*hides form when inactive from function*/
-}
 
 
 /* icons */
@@ -87,7 +80,7 @@ body{
 
 
 /*spacing for forms*/
-.form-group .form-control{
+#usernameLogin, #passwordLogin, #firstName, #lastName, #newUserName, #newPassword {
    margin: 1.5%;
 }
 
