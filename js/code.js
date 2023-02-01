@@ -321,3 +321,24 @@ function saveContact(num, id) {
         console.log(err.message);
     }
 }
+
+/**allow movement for slider+login/reg forms*/
+function moveleft() {
+	var sliderPosition = document.getElementById("slide")
+	var loginPosition = document.getElementById("loginform")
+	var registerPosition = document.getElementById("register-form")
+	loginPosition.style.left = "100%";
+	registerPosition.style.left = "0%";
+	sliderPosition.style.left = "40%";
+}
+
+/**allow movement for slider+login/reg forms*/
+function moveright() {
+	var loginPosition = document.getElementById("loginform")
+	var registerPosition = document.getElementById("register-form")
+	var sliderPosition = document.getElementById("slide")
+	loginPosition.style.left = "0%";
+	registerPosition.style.left = "-100%";
+	sliderPosition.style.left = "50%";
+	
+}

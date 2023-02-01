@@ -18,14 +18,47 @@ body{
 
 .bi-box-arrow-right{
    background: transparent;
-   color:white
+   color:white;
 }
+
+
+/*slider at top*/
+/*.btn-slider {
+   background: rgba(91,156,233,0.8) !important;
+   width: 10%;
+   height: 5%;
+   position: absolute;
+   transition: .5s;
+}*/
 
 /* buttons */
 .btn-blue-navy{
    background:var(--blue-navy) !important;
    color:white !important;
 }
+
+/*login reg at top*/
+.btn-topbtns {
+   background: var(--blue-navy) !important;
+   color: white !important;
+   width: 10%;
+
+}
+
+/*add shadow outside here*/
+
+
+
+
+
+.container-sm {
+   width: 780px; /*note to self: being overriddedn by border-box*/
+   height: 780px;
+   position: relative;
+   margin: 2% auto;
+   overflow: hidden; /*hides form when inactive from function*/
+}
+
 
 /* icons */
 .icon-md{
@@ -37,3 +70,41 @@ body{
    
 }
 
+
+
+
+/*#register-form {
+   position: absolute;
+   width: 80%;
+   transition: .4s;
+}*/
+
+/*#loginform {
+   position: absolute;
+   width: 98%;
+   transition: .4s;
+}*/
+
+
+/*spacing for forms*/
+.form-group .form-control{
+   margin: 1.5%;
+}
+
+
+
+/*moves login off screen to start and allows it to move when clicked*/
+#loginform {
+   position: absolute;
+   width: 97%;
+   left: 100%;
+   transition: .5s;
+}
+
+/*allows reg form to move when button clicked*/
+#register-form {
+   position: absolute;
+   width: 97%;
+   transition: .5s;
+   left: 0%;
+}
