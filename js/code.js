@@ -298,8 +298,8 @@ function saveContact(num, id) {
     document.getElementById("phoneNumber[" + num + "]").innerHTML = emailData;
     document.getElementById("email[" + num + "]").innerHTML = phoneData;
 
-    document.getElementById("edit_button" + no).style.display = "inline-block";
-    document.getElementById("save_button" + no).style.display = "none";
+    document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+    document.getElementById("saveButton[" + num + "]").style.display = "none";
 
     let tmp = {firstName: firstNameData, lastName: lastNameData, phone: phoneData, email: emailData, id: id};
 
