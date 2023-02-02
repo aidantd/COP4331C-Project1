@@ -74,7 +74,7 @@
                   <span class="h4">Search For Contact</span>
                </label>
                <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info">
-               <button type="submit inline" id="search-button" onclick="searchContact();">Search</button>
+               <button type="submit inline" class="btn btn-blue-navy" id="search-button" onclick="searchContact();">Search</button>
                <script>
                   document.getElementById("search-button").addEventListener("click", function(){
                       event.preventDefault();
@@ -101,13 +101,10 @@
                          event.preventDefault();
                      });
                   </script> ​<br/>
-                  <span id="contactAddStatus"></span>
                </form>
             </div>
-         
+         <span id="contactAddStatus"></span>
          </div>
-      
-         
       </div>
 
    </section>
