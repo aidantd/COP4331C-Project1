@@ -244,7 +244,18 @@ function addContact() {
 function deleteContact(num) {
 	let firstName = document.getElementById("firstName[" + num + "]").innerText;
 	let lastName = document.getElementById("lastName[" + num + "]").innerText;
+	let check = confirm('Confirm deletion of contact: ' + firstName + ' ' + lastName);
 
+	if (check != true) {
+        return;
+    }
+	document.getElementById("firstName[" + num + "]").outerText = "";
+	document.getElementById("lastName[" + num + "]").outerText = "";
+	document.getElementById("phoneNumber[" + num + "]").outerText = "";
+	document.getElementById("email[" + num + "]").outerText = "";
+	document.getElementById("editButton[" + num + "]").style.display = "none";
+	document.getElementById("deleteButton[" + num + "]").style.display = "none";
+	
 	let tmp = {firstName: firstName, lastName: lastName,userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
