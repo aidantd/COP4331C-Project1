@@ -22,7 +22,7 @@ body{
 }
 
 
-/*slider at top*/
+/*slider at top, fixing right now*/
 /*.btn-slider {
    background: rgba(91,156,233,0.8) !important;
    width: 10%;
@@ -37,19 +37,12 @@ body{
    color:white !important;
 }
 
-/*login reg at top*/
+/*login reg buttons at top (should probably change to ids)*/
 .btn-topbtns {
    background: var(--blue-navy) !important;
    color: white !important;
-   width: 10%;
-
+   width: 115px;
 }
-
-/*add shadow outside here*/
-
-
-
-
 
 
 
@@ -65,39 +58,27 @@ body{
 
 
 
-
-/*#register-form {
-   position: absolute;
-   width: 80%;
-   transition: .4s;
-}*/
-
-/*#loginform {
-   position: absolute;
-   width: 98%;
-   transition: .4s;
-}*/
-
-
-/*spacing for forms*/
+/*spacing and sizing for forms in login/reg page*/
 #usernameLogin, #passwordLogin, #firstName, #lastName, #newUserName, #newPassword {
    margin: 1.5%;
+   width: 97%;
 }
+
 
 
 
 /*moves login off screen to start and allows it to move when clicked*/
 #loginform {
    position: absolute;
-   width: 97%;
    left: 100%;
    transition: .5s;
+   width: 100%;
 }
 
 /*allows reg form to move when button clicked*/
 #register-form {
    position: absolute;
-   width: 97%;
+   width: 100%;
    transition: .5s;
    left: 0%;
 }
