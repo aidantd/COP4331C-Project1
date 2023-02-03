@@ -150,9 +150,9 @@ function showAllContacts() {
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td>"
-					html += "<button type='button' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
+					html += "<button type='button' class='btn btn-blue-navy' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
 					html += "<button type='button' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
-					html += "<button type='button' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					html += "<button type='button' class='btn btn-blue-navy' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
@@ -305,7 +305,7 @@ function saveContact(num, id) {
 
     let jsonPayload = JSON.stringify(tmp);
 
-    let url = urlBase + '/UpdateContacts.' + extension;
+    let url = urlBase + '/UpdateContact.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
