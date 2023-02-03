@@ -73,8 +73,8 @@
                <label for="search" class="pb-2">
                   <span class="h4">Search For Contact</span>
                </label>
-               <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info">
-               <button type="submit inline" id="search-button" onclick="searchContact();">Search</button>
+               <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info" onkeyup="searchContact();">
+               <button type="submit inline" id="search-button">Search</button>
                <script>
                   document.getElementById("search-button").addEventListener("click", function(){
                       event.preventDefault();
