@@ -16,7 +16,7 @@ body{
    background-color:var(--blue-navy) !important;
 }
 
-.bi-box-arrow-right{
+.bi-box-arrow-right, .bi-telephone-inbound{
    background: transparent;
    color:white;
 }
@@ -82,3 +82,5 @@ body{
    transition: .5s;
    left: 0%;
 }
+
+/* fonts */
