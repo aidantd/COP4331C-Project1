@@ -83,4 +83,9 @@ body{
    left: 0%;
 }
 
+.card-img-top{
+   width:50%;
+   max-width:150px !important;
+   
+}
 /* fonts */
