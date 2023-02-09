@@ -410,3 +410,10 @@ function validAddContact(firstName, lastName, phone, email) {
     }
     return true;
 }
+
+function clearAddContact() {
+	document.getElementById("contact-info-name-first").value = "";
+	document.getElementById("contact-info-name-last").value = "";
+	document.getElementById("contact-info-phone").value = "";
+	document.getElementById("contact-info-email").value = "";
+}
