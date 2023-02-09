@@ -1,1 +1,1 @@
-# COP4331C-Project1
+# Pocket Pals Contact Manager
