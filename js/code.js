@@ -217,6 +217,11 @@ function addContact() {
 	let phoneNumberAdd = document.getElementById("contact-info-phone").value;
 	let emailAdd = document.getElementById("contact-info-email").value;
 
+	if(validAddContact(firstNameAdd, lastNameAdd, phoneNumberAdd, emailAdd) == false) {
+		document.getElementById("contactAddStatus").innerHTML = "Failed To Add Contact Due to Invalid Input";
+		return;
+	}
+
 	let tmp = {firstName: firstNameAdd, lastName: lastNameAdd, phone: phoneNumberAdd, email: emailAdd, userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
 
@@ -354,4 +359,54 @@ function moveright() {
 	registerPosition.style.left = "-100%";
 	sliderPosition.style.left = "50%";
 	
+}
+
+function validAddContact(firstName, lastName, phone, email) {
+    let fNameErr = lNameErr = phoneErr = emailErr = true;
+
+    if(firstName == "") {
+    	console.log("FIRST NAME IS BLANK");
+    }
+    else {
+        console.log("first name IS VALID");
+        fNameErr = false;
+    }
+
+    if(lastName == "") {
+        console.log("LAST NAME IS BLANK");
+    }
+    else {
+        console.log("LAST name IS VALID");
+        lNameErr = false;
+    }
+    if(phone == "") {
+        console.log("PHONE IS BLANK");
+    }
+    else {
+        let pattern = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+        if(pattern.test(phone) == false) {
+            console.log("PHONE IS NOT VALID");
+        }
+        else {
+            console.log("PHONE IS VALID");
+            phoneErr = false;
+        }
+    }
+    if(email == "") {
+        console.log("EMAIL IS BLANK");
+    }
+    else {
+        let pattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+        if(pattern.test(email) == false) {
+            console.log("EMAIL IS NOT VALID");
+        }
+        else {
+            console.log("EMAIL IS VALID");
+            emailErr = false;
+        }
+    }
+    if((phoneErr || emailErr || fNameErr || lNameErr) == true) {
+        return false;
+    }
+    return true;
 }
