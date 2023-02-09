@@ -4,8 +4,66 @@
    --off-white:#F5F5F5;
 }
 
+/* fonts */
+@font-face {
+	font-family: 'pokemonFont';
+	src: url('fonts/pokemonFont.eot');
+	src: local('☺'), url('fonts/pokemonFont.woff') format('woff'), url('fonts/pokemonFont.ttf') format('truetype'), url('fonts/pokemonFont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1{
+   font-family: 'pokemonFont' !important;
+   font-size:2.2rem !important;
+}
+
+h2{
+   font-family: 'pokemonFont' !important;
+   font-size:2.0rem !important;
+}
+h3{
+   font-family: 'pokemonFont' !important;
+   font-size:1.8em !important;
+}
+
+h4{
+   font-family: 'pokemonFont' !important;
+   font-size:1.6em !important;
+}
+
+h5{
+   font-family: 'pokemonFont' !important;
+   font-size:1.4em !important;
+}
+
+h6{
+   font-family: 'pokemonFont' !important;
+   font-size:1.2em !important;
+}
+
 body{
-   background-color:var(--off-white) !important;
+   overflow:hidden;
+   font-family:'pokemonFont', serif !important;
+   font-size:1rem !important;
+}
+
+body.login{
+   background:url('/assets/login_background.jpg') !important;
+   background-size:cover;
+   background-repeat:no-repeat;
+   overflow:hidden;
+}
+body.home{
+   background-image:url('/assets/home_background.jpg') !important;
+   background-size:cover;
+   background-repeat:no-repeat;
+   overflow:hidden;
+}
+body.about{
+   background-image:url('/assets/login_background.jpg') !important;
+   background-size:cover;
+   overflow:hidden;
 }
 
 /* background stylings */
@@ -89,3 +147,12 @@ body{
    
 }
 /* fonts */
+
+@media (min-width: 1921px){
+   body.home{
+      background:url(../assets/home_background_original.jpg);
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow:hidden;
+   }
+}
