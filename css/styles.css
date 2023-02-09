@@ -51,20 +51,20 @@ h6{
 
 
 body.login{
-   background-image:url('/assets/login_background.jpg') !important;
+   background-image:url('../assets/login_background.jpg') !important;
    background-size:cover;
    background-repeat:no-repeat;
    overflow:hidden;
 }
 body.home{
-   background-image:url('/assets/home_background.jpg') !important;
+   background-image:url('../assets/home_background.jpg') !important;
    background-color:#C8C9C8;
    background-size:cover;
    background-repeat:no-repeat;
    overflow:hidden;
 }
 body.about{
-   background-image:url('/assets/login_background.jpg') !important;
+   background-image:url('../assets/login_background.jpg') !important;
    background-size:cover;
    overflow:hidden;
 }
