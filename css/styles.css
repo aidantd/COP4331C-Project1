@@ -1,6 +1,6 @@
 :root{
-   --blue:#5b9be9;
-   --blue-navy:#294588;
+   --blue:#6A92F2;
+   --blue-navy:#5b7cc8;
    --off-white:#F5F5F5;
 }
 
@@ -11,6 +11,12 @@
 	src: local('☺'), url('fonts/pokemonFont.woff') format('woff'), url('fonts/pokemonFont.ttf') format('truetype'), url('fonts/pokemonFont.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+body{
+   overflow:hidden;
+   font-family:'pokemonFont', serif !important;
+   font-size:1.5rem !important;
+   color:black !important;
 }
 
 h1{
@@ -42,20 +48,17 @@ h6{
    font-size:1.2em !important;
 }
 
-body{
-   overflow:hidden;
-   font-family:'pokemonFont', serif !important;
-   font-size:1rem !important;
-}
+
 
 body.login{
-   background:url('/assets/login_background.jpg') !important;
+   background-image:url('/assets/login_background.jpg') !important;
    background-size:cover;
    background-repeat:no-repeat;
    overflow:hidden;
 }
 body.home{
    background-image:url('/assets/home_background.jpg') !important;
+   background-color:#C8C9C8;
    background-size:cover;
    background-repeat:no-repeat;
    overflow:hidden;
@@ -93,8 +96,22 @@ body.about{
 .btn-blue-navy{
    background:var(--blue-navy) !important;
    color:white !important;
+   border:5px double black;
+   border-radius:15px;
+}
+.btn-red{
+   background:#D6413A !important;
+   color:black !important;
+   border:5px double black;
+   border-radius:15px;
 }
 
+.btn-green{
+   background:#9FDF58 !important;
+   color:black !important;
+   border:5px double black;
+   border-radius:15px;
+}
 /*login reg buttons at top (should probably change to ids)*/
 .btn-topbtns {
    background: var(--blue-navy) !important;
@@ -106,7 +123,7 @@ body.about{
 
 /* icons */
 .icon-md{
-   font-size:30px;
+   max-width:50px;
 }
 
 /* navbar */
@@ -150,7 +167,7 @@ body.about{
 
 @media (min-width: 1921px){
    body.home{
-      background:url(../assets/home_background_original.jpg);
+      background:url('../assets/home_background_original.jpg');
       background-size:cover;
       background-repeat:no-repeat;
       overflow:hidden;
