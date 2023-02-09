@@ -231,6 +231,10 @@ function addContact() {
             if(this.readyState == 4 && this.status == 200) {
                 let jsonObject= JSON.parse( xhr.responseText);
                 document.getElementById("contactAddStatus").innerHTML = "Successfully Added Contact";
+				document.getElementById("contact-info-name-first").value = "";
+				document.getElementById("contact-info-name-last").value = "";
+				document.getElementById("contact-info-phone").value = "";
+				document.getElementById("contact-info-email").value = "";
                 return;
             }
         };
