@@ -178,5 +178,5 @@ body.about{
 /* table styling */
 .contact-table{
    background-color: var(--gray-light);
-   opacity:.6;
+   /* opacity:.6; */
 }
