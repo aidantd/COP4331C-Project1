@@ -104,10 +104,18 @@
                            <input type="text" id="contact-info-name-first" class="form-control" placeholder="First Name" required="">
                            <input type="text" id="contact-info-name-last" class="form-control" placeholder="Last Name" required="">
                            <input type="text" id="contact-info-email" class="form-control" placeholder="email@email.com" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required="">
-                           <input type="text" id="contact-info-phone"  class="form-control"placeholder="###-###-####" pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$" required="">
+                           <input type="text" id="contact-info-phone" class="form-control" placeholder="###-###-####" pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$" required="">
+                           <button class = "btn-green mt-2" type="submit inline" id="add-contact-button" onclick="addContact();" data-bs-toggle="collapse" data-bs-target="#add-form">Submit</button>
+                           <script>
+                           document.getElementById("add-contact-button").addEventListener("click", function(){
+                                 event.preventDefault();
+                           });
+                           </script>
+                           <button class = "btn-red mt-2" type="submit inline" id="cancel-button" onclick="CloseEvent" data-bs-toggle="collapse" data-bs-target="#add-form">Cancel</button>
+                           <span id="contactAddStatus"></span>
                         </form>
                         <div class="modal-footer">
-                           <div class="container text-center">
+                           <!-- <div class="container text-center">
                               <button class = "btn-green mt-2" type="submit inline" id="add-contact-button" onclick="addContact();" data-bs-toggle="collapse" data-bs-target="#add-form">Submit</button>
                               
                               <script>
@@ -117,7 +125,7 @@
                               </script>
                               <button class = "btn-red mt-2" type="submit inline" id="cancel-button" onclick="CloseEvent" data-bs-toggle="collapse" data-bs-target="#add-form">Cancel</button>
                               <span id="contactAddStatus"></span>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
                   </div>            
