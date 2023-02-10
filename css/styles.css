@@ -15,10 +15,14 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+html{
+   font-size:16px !important;
+}
 body{
    overflow:hidden;
    font-family:'pokemonFont', serif !important;
-   font-size:1.5rem !important;
+   font-size:2rem !important;
    color:black !important;
 }
 
@@ -34,22 +38,22 @@ h2{
 }
 h3{
    font-family: 'pokemonFont' !important;
-   font-size:1.8em !important;
+   font-size:1.8rem !important;
 }
 
 h4{
    font-family: 'pokemonFont' !important;
-   font-size:1.6em !important;
+   font-size:1.6rem !important;
 }
 
 h5{
    font-family: 'pokemonFont' !important;
-   font-size:1.4em !important;
+   font-size:1.4rem !important;
 }
 
 h6{
    font-family: 'pokemonFont' !important;
-   font-size:1.2em !important;
+   font-size:1.2rem !important;
 }
 
 
@@ -167,14 +171,27 @@ body.about{
 /* icons */
 .icon-md{
    max-width:50px;
+   font-size:30px;
 }
 
 /* navbar */
 .nav-brand:hover{
-   filter: brightness(80%)
+   filter: brightness(150%)
+}
+.nav-link:hover{
+   text-decoration:underline;
 }
 
+/* modal */
+.modal-content{
+   border:6px dashed black !important;
+}
 
+#add-info > input:focus{
+   border-color: rgba(240, 72, 72, 0.8);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(240, 72, 72, 0.8);
+   outline: 0 none;
+}
 
 /*spacing and sizing for forms in login/reg page*/
 #usernameLogin, #passwordLogin, #firstName, #lastName, #newUserName, #newPassword {
@@ -219,38 +236,39 @@ body.about{
 }
 
 /* input fields */
-input::placeholder{
-   font-size:1.5rem;
+input::placeholder, input{
+   font-size:1.5rem !important;
 }
 
 
 
-#register-form{
+#register-form, #loginform{
    display:flex;
    flex-direction:column;
    justify-content:end;
    align-items:center;
    height:80% !important;
 }
-#loginform{
-   display:flex;
-   flex-direction:column;
-   justify-content:center;
-   align-items:center;
-   height:80% !important;
-}
 #register-form> input{
    height: 10% !important;
-   font-size:1.5rem;
 }
 
 #loginform> input{
    height: 15% !important;
-   font-size:1.5rem;
 }
 
+#error-list > ul{
+   list-style-type:none !important;
+   padding:0 !important;
+}
+#error-list > li{
+   text-decoration:underline;
+   font-weight:bold;
+}
 /* navb */
-@media (max-aspect-ratio:17/9){
+
+
+@media (max-aspect-ratio:16/9){
    body.home{
       background-image:url('../assets/home_background_original.jpg') !important;
       background-size:cover;
@@ -258,3 +276,15 @@ input::placeholder{
       overflow:hidden;
    }
 }
+@media (max-aspect-ratio:1/2){
+   body{
+      font-size:1.5rem !important;
+   }
+   body.home{
+      background-image:url('../assets/home_background_mobile.jpg') !important;
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow:hidden;
+   }
+}
+

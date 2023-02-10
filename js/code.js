@@ -363,8 +363,8 @@ function moveright() {
 
 function validAddContact(firstName, lastName, phone, email) {
     let fNameErr = lNameErr = phoneErr = emailErr = true;
-	let html = "";
-
+	 let html = "";
+    
     if(firstName == "") {
     	console.log("FIRST NAME IS BLANK");
 		html += "<li>First Name is blank</li>";
@@ -413,7 +413,8 @@ function validAddContact(firstName, lastName, phone, email) {
         }
     }
     if((phoneErr || emailErr || fNameErr || lNameErr) == true) {
-        return false;
+      document.getElementById("error-list").innerHTML = html;  
+      return false;
     }
     return true;
 }
