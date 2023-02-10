@@ -248,7 +248,6 @@ body.about{
 
 /* table styling */
 .table-wrapper{
-   overflow-x:hidden;
    overflow-y:scroll;
    max-height:400px;
 }
