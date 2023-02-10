@@ -12,16 +12,16 @@
     </head>
     
     <body class="login">
-      <header class="bg-blue-gradient py-2 mb-3">
+      <header class="bg-blue-gradient py-2 mb-3 position-sticky align-items-center">
          <div class="container-xxl text-center">
             <img src="assets/title.png" alt="pocket pals title" style="max-width:70%">
-            <h2 class="h2">GOTTA CALL 'EM ALL</h2>
+            <h2 class="h2" id="catchphrase">GOTTA CALL 'EM ALL</h2>
          </div>
       </header>
 
       </header>
       <section id="inputs">
-         <div class="container-sm text-center" id="small-cont">
+         <div class="container-sm text-center mb-5" id="small-cont">
             <h2 class="welcome">Welcome to Pocket Pals</h2>
             <span id="userNameDisplay"></span>
             <div class="loginregisterbuttons">
@@ -33,28 +33,31 @@
                   <button type="button" class="btn-blue-navy btn-topbtns" onclick="moveright()">Login</button>
                </div>
             </div>
-            <div class="card card-body" id="forms">
-               <!--login form-->
-               <form>
-                  <div class="form-group mb-3 text-center" id="loginform">
-                     <input id="usernameLogin" type="text" class="form-control" placeholder="username" name="username" required>
-                     <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
-                     <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
-                     <span id="loginResult"></span>
+            <div class="card" id="forms">
+               <div class="card-body">
+                  <div class="p-0 m-0" id="input-message"><br><br><br>
                   </div>
-               </form> 
+                  <!--login form-->
+                  <form>
+                     <div class="form-group mb-3 text-center" id="loginform">
+                        <input id="usernameLogin" type="text" class="form-control" placeholder="username" name="username" required>
+                        <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
+                        <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
+                        <span id="loginResult"></span>
+                     </div>
+                  </form> 
                      <!--register form-->
-               
-               <span id="registerStatus"></span>  
-               <form>
-                  <div class="form-group mb-3 text-center" id="register-form">
-                     <input id="firstName" type="text" class="form-control" placeholder="First Name" name="First Name" required>
-                     <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="Last Name" required>
-                     <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
-                     <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
-                     <button type="button" class="btn-blue-navy mt-3" id="registerButton"  onclick="register()">Register</button>
-                  </div>
-               </form>
+                  <span id="registerStatus"></span>  
+                  <form>
+                     <div class="form-group mb-3 text-center" id="register-form">
+                        <input id="firstName" type="text" class="form-control" placeholder="First Name" name="First Name" required>
+                        <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="Last Name" required>
+                        <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
+                        <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
+                        <button type="button" class="btn-blue-navy mt-3" id="registerButton"  onclick="register()">Register</button>
+                     </div>
+                  </form>
+               </div>
                 
             </div>
                 

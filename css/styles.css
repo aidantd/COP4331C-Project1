@@ -50,6 +50,24 @@ h6{
 html{
    font-size:16px !important;
 }
+
+html::-webkit-scrollbar {
+   display:none;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color:#A9AAA9;
+   height:10px !important;
+}
+
+html::-webkit-scrollbar-track{
+   background-color:#EBECEE;
+}
+
+html::-webkit-scrollbar-button{
+   background-c;
+}
+
 body{
    overflow-x:hidden;
    font-family:'pokemonFont', serif !important;
@@ -154,18 +172,21 @@ body.about{
 
 #forms {
    background: rgb(143, 143, 143, 80%) !important;
-   max-width: 1050px;
-   height: 50vh;
+   min-height: 50vh;
    top: 20px;
    border-radius: 10px;
    border: 3px double black;
    margin: 0 auto ;
-   opacity: 95%;
+   opacity: 90%;
    padding: 3%;
    text-align: center;
-   overflow: hidden;
+   overflow-x:hidden;
+   overflow-y:scroll;
    transition: .1s;
    box-shadow:7px 7px 5px rgba(143, 143, 143, 0.671);
+}
+#forms::-webkit-scrollbar{
+   display:none;
 }
 
 
@@ -175,6 +196,16 @@ body.about{
    font-size:30px;
 }
 
+#catchphrase{
+   padding:10px 7px;
+   max-width:250px;
+   margin:0 auto;
+   background-color: var(--red);
+   border: 5px solid black;
+   border-radius:15px;
+   opacity:80%;
+
+}
 /* navbar */
 .nav-brand:hover{
    filter: brightness(150%)
@@ -244,6 +275,9 @@ input::placeholder, input{
 }
 
 
+/* log in page */
+#input-message{
+}
 
 #register-form, #loginform{
    display:flex;
