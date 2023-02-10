@@ -485,7 +485,7 @@ function validRegister(firstNameTest, lastNameTest, usernameTest, passwordTest) 
 	document.getElementById("registration-errors").innerHTML = html;
 
 	if(registerErr == true) {
-		return true;
+		return false;
 	}
-	return false;
+	return true;
 }
