@@ -317,8 +317,8 @@ function saveContact(num, id) {
 
     document.getElementById("firstName[" + num + "]").innerHTML = firstNameData;
     document.getElementById("lastName[" + num + "]").innerHTML = lastNameData;
-    document.getElementById("phoneNumber[" + num + "]").innerHTML = emailData;
-    document.getElementById("email[" + num + "]").innerHTML = phoneData;
+    document.getElementById("phoneNumber[" + num + "]").innerHTML = phoneData;
+    document.getElementById("email[" + num + "]").innerHTML = emailData;
 
     document.getElementById("editButton[" + num + "]").style.display = "inline-block";
 	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
