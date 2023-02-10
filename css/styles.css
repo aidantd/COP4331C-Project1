@@ -169,8 +169,8 @@ body.about{
 }
 
 /* navbar */
-.nav-link{
-   
+.nav-brand:hover{
+   filter: brightness(80%)
 }
 
 
@@ -222,14 +222,7 @@ input::placeholder{
    font-size:1.5rem;
 }
 
-@media (max-aspect-ratio: 3/2){
-   body.home{
-      background-image:url('../assets/home_background_original.jpg');
-      background-size:cover;
-      background-repeat:no-repeat;
-      overflow:hidden;
-   }
-}
+
 
 #register-form, #loginform{
    display:flex;
@@ -246,4 +239,14 @@ input::placeholder{
 #loginform> input{
    height: 15% !important;
    font-size:1.5rem;
+}
+
+/* navb */
+@media (max-aspect-ratio:17/9){
+   body.home{
+      background-image:url('../assets/home_background_original.jpg') !important;
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow:hidden;
+   }
 }
