@@ -437,3 +437,27 @@ function clearAddContact() {
 	document.getElementById("contactAddStatus").innerHTML = "";
 	document.getElementById("error-list").innerHTML = "";
 }
+
+function validPassword(password) {
+	let passErr = true;
+	let html = "";
+	if(password == "") {
+		console.log("PASSWORD IS BLANK");
+	}
+	else {
+		let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+		if(pattern.test(password) == false) {
+			console.log("PASSWORD IS NOT VALID");
+			html += "<li>Password must contain 1 uppercase, 1 lowercase, 1 number, and be between 6-20 characters</li>";
+			document.getElementById("registration-errors").innerHTML = html;
+		}
+		else {
+			console.log("PASSWORD IS VALID");
+			passErr = false;
+		}
+	}
+	if(passErr == true) {
+		return false;
+	}
+	return true;
+}
