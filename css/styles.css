@@ -311,20 +311,11 @@ input::placeholder, input{
    min-height: 15% !important;
 }
 
-#error-list > ul{
-   list-style-type:none !important;
-   padding:0 !important;
-}
-#error-list > li{
-   text-decoration:underline;
-   font-weight:bold;
-}
-
-#registration-errors ul{
+#registration-errors ul, #error-list > ul{
    list-style:circle;
 }
 
-#registration-errors li{
+#registration-errors li, #error-list > li{
    display:inline;
    color:red;
    font-weight:bold;
