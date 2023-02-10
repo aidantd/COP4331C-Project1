@@ -282,7 +282,7 @@ input::placeholder, input{
 #register-form, #loginform{
    display:flex;
    flex-direction:column;
-   justify-content:end;
+   justify-content:start;
    align-items:center;
    height:80% !important;
 }
