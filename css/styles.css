@@ -230,7 +230,7 @@ body.about{
 }
 th{
    position:sticky !important;
-   background-color: rgba(128, 128, 128);
+   background-color: rgba(128, 128, 128, 1) !important;
    top:0;
 }
 
