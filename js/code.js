@@ -152,6 +152,7 @@ function showAllContacts() {
 					"</td><td>"
 					html += "<button type='button' class='btn-green' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
 					html += "<button type='button' class='btn-green' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
+					html += "<button type='button' class='btn-red' style='display: none' id='cancelButton[" + i + "]' onclick='cancelContact(" + i + "," + jsonObject.results[i].id + ")'>Cancel</button>"
 					html += "<button type='button' class='btn-red' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
@@ -198,6 +199,7 @@ function searchContact() {
 					"</td><td>"
 					html += "<button type='button' class='btn-green' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
 					html += "<button type='button' class='btn-green' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
+					html += "<button type='button' class='btn-red' style='display: none' id='cancelButton[" + i + "]' onclick='cancelContact(" + i + "," + jsonObject.results[i].id + ")'>Cancel</button>"
 					html += "<button type='button' class='btn-red' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
@@ -287,12 +289,14 @@ function deleteContact(num) {
 
 function editContact(num) {
     document.getElementById("editButton[" + num + "]").style.display = "none";
+	document.getElementById("deleteButton[" + num + "]").style.display = "none";
+	document.getElementById("cancelButton[" + num + "]").style.display = "inline-block";
     document.getElementById("saveButton[" + num + "]").style.display = "inline-block";
 
     var firstNameVal = document.getElementById("firstName[" + num + "]");
     var lastNameVal = document.getElementById("lastName[" + num + "]");
-    var emailVal = document.getElementById("phoneNumber[" + num + "]");
-    var phoneVal = document.getElementById("email[" + num + "]");
+    var emailVal = document.getElementById("email[" + num + "]");
+    var phoneVal = document.getElementById("phoneNumber[" + num + "]");
 
     var firstNameData = firstNameVal.innerText;
     var lastNameData = lastNameVal.innerText;
@@ -313,11 +317,13 @@ function saveContact(num, id) {
 
     document.getElementById("firstName[" + num + "]").innerHTML = firstNameData;
     document.getElementById("lastName[" + num + "]").innerHTML = lastNameData;
-    document.getElementById("phoneNumber[" + num + "]").innerHTML = emailData;
-    document.getElementById("email[" + num + "]").innerHTML = phoneData;
+    document.getElementById("phoneNumber[" + num + "]").innerHTML = phoneData;
+    document.getElementById("email[" + num + "]").innerHTML = emailData;
 
     document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
     document.getElementById("saveButton[" + num + "]").style.display = "none";
+	document.getElementById("cancelButton[" + num + "]").style.display = "none";
 
     let tmp = {firstName: firstNameData, lastName: lastNameData, phone: phoneData, email: emailData, id: id};
 
@@ -338,6 +344,10 @@ function saveContact(num, id) {
     } catch (err) {
         console.log(err.message);
     }
+}
+
+function cancelContact(num) {
+	window.location.href = "home.html";
 }
 
 /**allow movement for slider+login/reg forms*/
