@@ -321,7 +321,7 @@ input::placeholder, input{
    font-weight:bold;
    padding:0 10px;
 }
-#registration-errors li:not(:last-child){
+#registration-errors li:not(:last-child), #registration-errors li, #error-list > li:not(:last-child){
    border-right:3px solid black;
 }
 /* navb */
