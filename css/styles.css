@@ -160,6 +160,7 @@ body.about{
    text-align: center;
    overflow: hidden;
    transition: .1s;
+   box-shadow:7px 7px 5px rgba(143, 143, 143, 0.671);
 }
 
 
@@ -227,7 +228,7 @@ input::placeholder{
 #register-form, #loginform{
    display:flex;
    flex-direction:column;
-   justify-content:space-around;
+   justify-content:center;
    align-items:center;
    height:80% !important;
 }
