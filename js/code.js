@@ -10,8 +10,7 @@ function register() {
 
     document.getElementById("registerStatus").innerHTML = "";
 
-	if(firstName === "" || lastName === "" || username === "" || password === "") {
-		document.getElementById("registerStatus").innerHTML = "All fields are required";
+	if(!(validRegister(firstName, lastName, username, password))) {
 		return;
 	}
 
@@ -438,25 +437,53 @@ function clearAddContact() {
 	document.getElementById("error-list").innerHTML = "";
 }
 
-function validPassword(password) {
-	let passErr = true;
+function validRegister(firstNameTest, lastNameTest, usernameTest, passwordTest) {
 	let html = "";
+	let registerErr = true;
+	if(firstName == "") {
+    	console.log("FIRST NAME IS BLANK");
+		html += "<li>First Name is blank</li>";
+    }
+    else {
+        console.log("first name IS VALID");
+        registerErr = false;
+    }
+
+    if(lastName == "") {
+        console.log("LAST NAME IS BLANK");
+		html += "<li>Last Name is blank</li>";
+    }
+    else {
+        console.log("LAST name IS VALID");
+        registerErr = false;
+    }
+	if(username == "") {
+		console.log("USERNAME IS BLANK");
+		html += "<li>Username is blank</li>";
+	}
+	else {
+		console.log("USERNAME IS VALID");
+		registerErr = false;
+	}
 	if(password == "") {
 		console.log("PASSWORD IS BLANK");
+		html += "<li>Password is blank</li>";
 	}
 	else {
 		let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 		if(pattern.test(password) == false) {
 			console.log("PASSWORD IS NOT VALID");
 			html += "<li>Password must contain 1 uppercase, 1 lowercase, 1 number, and be between 6-20 characters</li>";
-			document.getElementById("registration-errors").innerHTML = html;
 		}
 		else {
 			console.log("PASSWORD IS VALID");
 			passErr = false;
 		}
 	}
-	if(passErr == true) {
+
+	document.getElementById("registration-errors").innerHTML = html;
+
+	if(registerErr == true) {
 		return false;
 	}
 	return true;
