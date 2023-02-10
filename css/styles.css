@@ -220,7 +220,7 @@ body.about{
 
 /* table styling */
 .table-wrapper{
-   overflow-y:scroll;
+   overflow:scroll;
    max-height:400px;
 }
 .contact-table{
