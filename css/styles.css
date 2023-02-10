@@ -16,16 +16,6 @@
 	font-style: normal;
 }
 
-html{
-   font-size:16px !important;
-}
-body{
-   overflow:hidden;
-   font-family:'pokemonFont', serif !important;
-   font-size:1.5rem !important;
-   color:black !important;
-}
-
 h1{
    font-family: 'pokemonFont' !important;
    font-size:2.2rem !important;
@@ -56,25 +46,30 @@ h6{
    font-size:1.2rem !important;
 }
 
-
+html{
+   font-size:16px !important;
+}
+body{
+   overflow-x:hidden;
+   font-family:'pokemonFont', serif !important;
+   font-size:1.5rem !important;
+   color:black !important;
+}
 
 body.login{
    background-image:url('../assets/login_background.jpg') !important;
    background-size:auto;
    background-repeat:no-repeat;
-   overflow-x:hidden;
 }
 body.home{
    background-image:url('../assets/home_background.jpg') !important;
    background-color: var(--gray-light);
    background-size:cover;
    background-repeat:no-repeat;
-   overflow:hidden;
 }
 body.about{
-   background-image:url('../assets/login_background.jpg') !important;
+   background-image:url('../assets/about_background.png') !important;
    background-size:cover;
-   overflow:hidden;
 }
 
 /* background stylings */
@@ -83,6 +78,11 @@ body.about{
 }
 .bg-blue-navy{
    background-color:var(--blue-navy) !important;
+}
+
+.bg-black-gradient{
+   background-color: rgba(10, 10, 10, .55);
+
 }
 
 .bg-blue-gradient{
@@ -218,12 +218,6 @@ body.about{
    left: 0%;
 }
 
-.card-img-top{
-   width:50% !important;
-   max-width:200x !important;
-   
-}
-
 /* table styling */
 .table-wrapper{
    overflow-y:scroll;
@@ -294,3 +288,37 @@ input::placeholder, input{
    }
 }
 
+/* about page */
+#credit-box{
+   border-radius:10px;
+}
+
+#credit-box{
+   padding: 40px 0px;
+}
+#credit-box .card{
+   text-align:center;
+   background-color:transparent !important;
+   border:none !important;
+}
+
+#credit-box .card > .card-img{
+   text-align:center;
+}
+
+#credit-box  .card .card-img-top{
+   width:50% !important;
+   max-width:300px !important;
+}
+
+#credit-box .list-group{
+   background-color:transparent !important;
+   text-align:center !important;
+}
+
+#credit-box .list-group-item{
+   background-color:transparent;
+   width:100%;
+   color:white;
+   border-bottom:5px solid white;
+}
