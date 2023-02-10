@@ -321,7 +321,9 @@ function saveContact(num, id) {
     document.getElementById("email[" + num + "]").innerHTML = phoneData;
 
     document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
     document.getElementById("saveButton[" + num + "]").style.display = "none";
+	document.getElementById("cancelButton[" + num + "]").style.display = "none";
 
     let tmp = {firstName: firstNameData, lastName: lastNameData, phone: phoneData, email: emailData, id: id};
 
@@ -345,10 +347,6 @@ function saveContact(num, id) {
 }
 
 function cancelContact(num) {
-	document.getElementById("editButton[" + num + "]").style.display = "inline-block";
-	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
-	document.getElementById("cancelButton[" + num + "]").style.display = "none";
-	document.getElementById("saveButton[" + num + "]").style.display = "none";
 	window.location.href = "home.html";
 }
 
