@@ -163,7 +163,7 @@ body.about{
 
 #forms {
    background: rgb(143, 143, 143, 80%) !important;
-   min-height: 50vh;
+   min-height: 65vh;
    top: 20px;
    border-radius: 10px;
    border: 3px double black;
@@ -298,11 +298,11 @@ input::placeholder, input{
    height:80% !important;
 }
 #register-form> input{
-   height: 10% !important;
+   min-height: 10% !important;
 }
 
 #loginform> input{
-   height: 15% !important;
+   min-height: 15% !important;
 }
 
 #error-list > ul{
