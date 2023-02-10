@@ -276,7 +276,7 @@ input::placeholder, input{
       overflow:hidden;
    }
 }
-@media (max-aspect-ratio:1/2){
+@media (max-aspect-ratio:9/20){
    body{
       font-size:1.5rem !important;
    }
