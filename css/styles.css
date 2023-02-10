@@ -273,7 +273,7 @@ input::placeholder, input{
       background-image:url('../assets/home_background_original.jpg') !important;
       background-size:cover;
       background-repeat:no-repeat;
-      overflow:hidden;
+      overflow-x:hidden;
    }
 }
 @media (max-aspect-ratio:9/20){
