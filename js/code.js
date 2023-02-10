@@ -188,7 +188,7 @@ function searchContact() {
 					document.getElementById("allContactInfo").innerHTML = html;
 					return;
 				}
-				html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table\" id=\"contact-table\">"
+				html += "<section id=\"infoWindow\"><div class=\"container\"><table class=\"table contact-table\" id=\"contact-table\">"
 				html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					html += "<tbody><tr id='row[" + i + "]'><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
@@ -363,9 +363,11 @@ function moveright() {
 
 function validAddContact(firstName, lastName, phone, email) {
     let fNameErr = lNameErr = phoneErr = emailErr = true;
+	let html = "";
 
     if(firstName == "") {
     	console.log("FIRST NAME IS BLANK");
+		html += "<li>First Name is blank</li>";
     }
     else {
         console.log("first name IS VALID");
@@ -374,6 +376,7 @@ function validAddContact(firstName, lastName, phone, email) {
 
     if(lastName == "") {
         console.log("LAST NAME IS BLANK");
+		html += "<li>Last Name is blank</li>";
     }
     else {
         console.log("LAST name IS VALID");
@@ -381,11 +384,13 @@ function validAddContact(firstName, lastName, phone, email) {
     }
     if(phone == "") {
         console.log("PHONE IS BLANK");
+		html += "<li>Phone is blank</li>";
     }
     else {
         let pattern = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
         if(pattern.test(phone) == false) {
             console.log("PHONE IS NOT VALID");
+			html += "<li>Phone is not valid</li>";
         }
         else {
             console.log("PHONE IS VALID");
@@ -394,11 +399,13 @@ function validAddContact(firstName, lastName, phone, email) {
     }
     if(email == "") {
         console.log("EMAIL IS BLANK");
+		html += "<li>Email is blank</li>";
     }
     else {
         let pattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
         if(pattern.test(email) == false) {
             console.log("EMAIL IS NOT VALID");
+			html += "<li>Email is not valid</li>";
         }
         else {
             console.log("EMAIL IS VALID");
