@@ -231,6 +231,7 @@ body.about{
 }
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);
+   margin:0 !important;
 }
 th{
    position:sticky !important;

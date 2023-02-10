@@ -196,9 +196,9 @@ function searchContact() {
 					"</td><td id='phoneNumber[" + i + "]'>" + jsonObject.results[i].phone +
 					"</td><td id='email[" + i + "]'>" + jsonObject.results[i].email + 
 					"</td><td>"
-					html += "<button type='button' class='btn btn-blue-navy' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
-					html += "<button type='button' class='btn btn-blue-navy' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
-					html += "<button type='button' class='btn btn-blue-navy' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
+					html += "<button type='button' class='btn-green' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
+					html += "<button type='button' class='btn-green' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
+					html += "<button type='button' class='btn-red' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
 				document.getElementById("allContactInfo").innerHTML = html;
