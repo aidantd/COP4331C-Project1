@@ -113,6 +113,19 @@ body.about{
    border:5px double black;
    border-radius:15px;
 }
+
+.btn-blue{
+   background:#5b7cc8 !important;
+   color:black !important;
+   border:3px double black;
+   border-radius:7px;
+   
+}
+
+.btn-blue:hover{
+   filter: brightness(120%);
+}
+
 /*login reg buttons at top (should probably change to ids)*/
 .btn-topbtns {
    background: var(--blue-navy) !important;
@@ -120,6 +133,20 @@ body.about{
    width: 115px;
 }
 
+#forms {
+   background: rgb(143, 143, 143) !important;
+   max-width: 1050px;
+   height: 500px;
+   top: 20px;
+   border-radius: 10px;
+   border: 3px double black;
+   margin: 0 auto ;
+   opacity: 95%;
+   padding: 3%;
+   text-align: center;
+   overflow: hidden;
+   transition: .1s;
+}
 
 
 /* icons */
