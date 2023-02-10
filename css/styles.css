@@ -5,6 +5,7 @@
    --off-white:#F5F5F5;
    --gray-light:#C8C9C8;
    --red:#D1443B;
+   --green-dark:#68A05F;
 }
 
 /* fonts */
@@ -63,7 +64,7 @@ body.login{
 }
 body.home{
    background-image:url('../assets/home_background.jpg') !important;
-   background-color: var(--gray-light);
+   background-color: var(--green-dark);
    background-size:cover;
    background-repeat:no-repeat;
 }
@@ -229,6 +230,7 @@ body.about{
 }
 th{
    position:sticky !important;
+   top:0;
 }
 
 tbody{
