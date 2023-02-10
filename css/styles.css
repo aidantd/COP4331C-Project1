@@ -142,8 +142,9 @@ body.about{
    width: 115px;
 }
 
+
 #forms {
-   background: rgb(143, 143, 143) !important;
+   background: rgb(143, 143, 143, 80%) !important;
    max-width: 1050px;
    height: 500px;
    top: 20px;

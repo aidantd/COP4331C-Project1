@@ -36,31 +36,28 @@
                   Welcome <span id="loggedInUser"></span>
                </h2>
             </div>
-            <div class="col text-end">
-               <nav class="navbar navbar-expand-md p-0">
-                  <div class="container-xxl text-center">
-                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
-                        <span class="navbar-toggler-icon"></span>
+            <nav class="navbar navbar-expand-md p-0">
+               <div class="container-xxl text-center">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+      
+                  <div class="collapse navbar-collapse justify-content-center align-center" id="main-nav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                           <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item" class="nav-link"></li>
+                     </ul>
+                     <button type="button" class="btn" onclick="doLogout();">
+                        <i class="bi bi-box-arrow-right icon-md"></i>
                      </button>
-         
-                     <div class="collapse navbar-collapse justify-content-center align-center" id="main-nav">
-                        <ul class="navbar-nav">
-                           <li class="nav-item">
-                              <a href="about.html" class="nav-link">About</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Contact</a>
-                           </li>
-                           <li class="nav-item" class="nav-link"></li>
-                        </ul>
-                        <button type="button" class="btn" onclick="doLogout();">
-                           <i class="bi bi-box-arrow-right icon-md"></i>
-                        </button>
-                     </div>
                   </div>
-               </nav>
-               
-            </div>
+               </div>
+            </nav>
          </div>
       </div>
    </header>
@@ -95,7 +92,7 @@
                      <div class="modal-header">
                         <h5 class="modal-title">Add New Contact</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal">
-                           <span aria-hidden="true"></span>
+                           <img src="assets/close-button.png" class="icon-md" alt="close window button">
                         </button>
                      </div>
                      <div class="modal-body">
@@ -117,7 +114,7 @@
                                   event.preventDefault();
                               });
                               </script>
-                              <button class = "btn-red mt-2" type="submit inline" id="cancel-button" onclick="clearAddContact()" data-bs-toggle="collapse" data-bs-target="#add-form">Reset</button>
+                              <button class = "btn-red mt-2" type="submit inline" id="cancel-button" onclick="clearAddContact()" data-bs-toggle="collapse" data-bs-target="#add-form">Clear</button>
                               <span id="contactAddStatus"></span>
                            </div>
                         </div>
