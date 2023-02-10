@@ -234,7 +234,7 @@ body.about{
 }
 tbody{
    overflow-y:scroll;
-   max-height:300px;
+   max-height:100px;
 }
 
 /* input fields */
