@@ -345,20 +345,22 @@ function saveContact(num, id) {
 }
 
 function cancelContact(num) {
-	let firstName = document.getElementById("firstName[" + num + "]").value;
-	let lastName = document.getElementById("lastName[" + num + "]").value;
-	let phone = document.getElementById("phoneNumber[" + num + "]").value;
-	let email = document.getElementById("email[" + num + "]").value;
 
-	document.getElementById("firstName[" + num + "]").innerHTML = firstName;
-	document.getElementById("lastName[" + num + "]").innerHTML = lastName;
-	document.getElementById("phoneNumber[" + num + "]").innerHTML = phone;
-	document.getElementById("email[" + num + "]").innerHTML = email;
+	window.location.href = "home.html";
+	// let firstName = document.getElementById("firstName[" + num + "]").innerHTML;
+	// let lastName = document.getElementById("lastName[" + num + "]").innerText;
+	// let phone = document.getElementById("phoneNumber[" + num + "]").innerText;
+	// let email = document.getElementById("email[" + num + "]").innerText;
 
-	document.getElementById("editButton[" + num + "]").style.display = "inline-block";
-	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
-	document.getElementById("saveButton[" + num + "]").style.display = "none";
-	document.getElementById("cancelButton[" + num + "]").style.display = "none";
+	// document.getElementById("firstName[" + num + "]").innerHTML = firstName;
+	// document.getElementById("lastName[" + num + "]").innerHTML = lastName;
+	// document.getElementById("phoneNumber[" + num + "]").innerHTML = phone;
+	// document.getElementById("email[" + num + "]").innerHTML = email;
+
+	// document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+	// document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
+	// document.getElementById("saveButton[" + num + "]").style.display = "none";
+	// document.getElementById("cancelButton[" + num + "]").style.display = "none";
 }
 
 /**allow movement for slider+login/reg forms*/
