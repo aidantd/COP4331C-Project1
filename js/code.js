@@ -295,8 +295,8 @@ function editContact(num) {
 
     var firstNameVal = document.getElementById("firstName[" + num + "]");
     var lastNameVal = document.getElementById("lastName[" + num + "]");
-    var emailVal = document.getElementById("phoneNumber[" + num + "]");
-    var phoneVal = document.getElementById("email[" + num + "]");
+    var emailVal = document.getElementById("email[" + num + "]");
+    var phoneVal = document.getElementById("phoneNumber[" + num + "]");
 
     var firstNameData = firstNameVal.innerText;
     var lastNameData = lastNameVal.innerText;
