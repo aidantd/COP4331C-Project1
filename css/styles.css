@@ -228,10 +228,17 @@ body.about{
 
 
 /* table styling */
+.table-wrapper{
+   overflow-y:scroll;
+   max-height:200px;
+}
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);
-   overflow-y:scroll;
 }
+thead{
+   position:sticky
+}
+
 tbody{
    overflow-y:scroll;
    max-height:100px;
