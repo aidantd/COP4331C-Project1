@@ -249,7 +249,7 @@ body.about{
 }
 
 .table-wrapper::-webkit-scrollbar {
-   width:2vw;
+   width:1.25vw;
 }
 
 .table-wrapper::-webkit-scrollbar-thumb{

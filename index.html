@@ -43,10 +43,6 @@
                         <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
                         <span id="loginResult"></span>
                         
-                        <div class="p-0 m-0" id="input-message">
-                           <ul id="registration-errors"></ul>
-                        </div>
-                        <span id="registerStatus"></span> 
                      </div>
                   </form> 
                      <!--register form--> 
@@ -57,6 +53,11 @@
                         <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
                         <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
                         <button type="button" class="btn-blue-navy mt-3" id="registerButton"  onclick="register()">Register</button>
+                        
+                        <div class="p-0 m-0" id="input-message">
+                           <ul id="registration-errors"></ul>
+                        </div>
+                        <span id="registerStatus"></span> 
                      </div>
                   </form>
                </div>
