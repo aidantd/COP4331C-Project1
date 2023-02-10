@@ -142,6 +142,10 @@ body.about{
    width: 115px;
 }
 
+.btn-close{
+   background-image:url('../assets/close-button.png');
+}
+
 
 #forms {
    background: rgb(143, 143, 143, 80%) !important;
