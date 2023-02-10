@@ -235,7 +235,7 @@ body.about{
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);
 }
-thead{
+th{
    position:sticky
 }
 
