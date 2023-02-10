@@ -261,8 +261,8 @@ body.about{
    background-color:var(--gray);
    height:10px !important;
 }
-.table-wrapper::-webkit-scrollbar-thumb{
-   filter:brightness(80%);
+.table-wrapper::-webkit-scrollbar-thumb:hover{
+   background-color:var(--gray-dark);
 }
 .table-wrapper::-webkit-scrollbar-track{
    background-color:#EBECEE;
