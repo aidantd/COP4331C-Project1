@@ -223,25 +223,21 @@ body.about{
    max-width:200x !important;
    
 }
-/* fonts */
-
-
 
 /* table styling */
 .table-wrapper{
    overflow-y:scroll;
-   max-height:200px;
+   max-height:400px;
 }
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);
 }
 th{
-   position:sticky
+   position:sticky !important;
 }
 
 tbody{
    overflow-y:scroll;
-   max-height:100px;
 }
 
 /* input fields */
@@ -293,7 +289,7 @@ input::placeholder, input{
       background-image:url('../assets/home_background_mobile.jpg') !important;
       background-size:cover;
       background-repeat:no-repeat;
-      overflow:hidden;
+      overflow-x:hidden;
    }
 }
 
