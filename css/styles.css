@@ -176,6 +176,10 @@ body.about{
    transition: .1s;
    box-shadow:7px 7px 5px rgba(143, 143, 143, 0.671);
 }
+#forms .card-body{
+   padding-top:0;
+   margin-top:0;
+}
 #forms::-webkit-scrollbar{
    display:none;
 }
@@ -234,6 +238,7 @@ body.about{
 }
 
 /*allows reg form to move when button clicked*/
+
 #register-form {
    position: absolute;
    width: 100%;
@@ -299,6 +304,7 @@ input::placeholder, input{
 }
 #register-form> input{
    min-height: 10% !important;
+   margin:0;
 }
 
 #loginform> input{
@@ -312,6 +318,20 @@ input::placeholder, input{
 #error-list > li{
    text-decoration:underline;
    font-weight:bold;
+}
+
+#registration-errors ul{
+   list-style:circle;
+}
+
+#registration-errors li{
+   display:inline;
+   color:red;
+   font-weight:bold;
+   padding:0 10px;
+}
+#registration-errors li:not(:last-child){
+   border-right:3px solid black;
 }
 /* navb */
 

@@ -38,6 +38,7 @@
                   <!--login form-->
                   <form>
                      <div class="form-group mb-3 text-center" id="loginform">
+                        <label for="usernameLogin"></label>
                         <input id="usernameLogin" type="text" class="form-control" placeholder="username" name="username" required>
                         <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
                         <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
@@ -48,17 +49,27 @@
                      <!--register form--> 
                   <form>
                      <div class="form-group mb-3 text-center" id="register-form">
-                        <input id="firstName" type="text" class="form-control" placeholder="First Name" name="First Name" required>
-                        <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="Last Name" required>
-                        <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
-                        <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
+                        <div class="form-group row"></div>
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" class="form-control inline-block" placeholder="First Name" name="firstName" required>
+                       
+                        
+
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="lastName" required>
+                        
+                        <label for="newUserName">Username</label>
+                        <input id="newUserName" type="text" class="form-control" placeholder="Username" name="username" required>
+                        
+                        <label for="Password">Password</label>
+                        <input id="newPassword" type="password" class="form-control inlin" placeholder="Password" name="password" required>
                         
                         <div class="p-0 m-0" id="input-message">
                            <ul id="registration-errors"></ul>
                         </div>
                         <span id="registerStatus"></span> 
-                        
-                        <button type="button" class="btn-blue-navy mt-3" id="registerButton"  onclick="register()">Register</button>
+
+                        <button type="button" class="btn-blue-navy mt-2" id="registerButton"  onclick="register()">Register</button>
                         
                         
                      </div>
