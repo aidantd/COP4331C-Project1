@@ -35,11 +35,6 @@
             </div>
             <div class="card" id="forms">
                <div class="card-body">
-                  <div class="p-0 m-0" id="input-message">
-                     <ul id="registration-errors">
-                        
-                     </ul>
-                  </div>
                   <!--login form-->
                   <form>
                      <div class="form-group mb-3 text-center" id="loginform">
@@ -47,6 +42,10 @@
                         <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
                         <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
                         <span id="loginResult"></span>
+                        
+                        <div class="p-0 m-0" id="input-message">
+                           <ul id="registration-errors"></ul>
+                        </div>
                      </div>
                   </form> 
                      <!--register form-->

@@ -3,6 +3,8 @@
    --blue-navy:#5b7cc8;
    --blue-light:#9CD7F9;
    --off-white:#F5F5F5;
+   --gray:#87898C;
+   --gray-dark:#53565A;
    --gray-light:#C8C9C8;
    --red:#D1443B;
    --green-dark:#68A05F;
@@ -51,22 +53,7 @@ html{
    font-size:16px !important;
 }
 
-html::-webkit-scrollbar {
-   display:none;
-}
 
-html::-webkit-scrollbar-thumb{
-   background-color:#A9AAA9;
-   height:10px !important;
-}
-
-html::-webkit-scrollbar-track{
-   background-color:#EBECEE;
-}
-
-html::-webkit-scrollbar-button{
-   background-c;
-}
 
 body{
    overflow-x:hidden;
@@ -79,16 +66,20 @@ body.login{
    background-image:url('../assets/login_background.jpg') !important;
    background-size:auto;
    background-repeat:no-repeat;
+   overflow-x:hidden;
 }
 body.home{
    background-image:url('../assets/home_background.jpg') !important;
    background-color: var(--green-dark);
    background-size:cover;
    background-repeat:no-repeat;
+   overflow-x:hidden;
 }
 body.about{
    background-image:url('../assets/about_background.png') !important;
    background-size:cover;
+   overflow-x:hidden;
+
 }
 
 /* background stylings */
@@ -252,8 +243,28 @@ body.about{
 
 /* table styling */
 .table-wrapper{
-   overflow:scroll;
+   overflow-x:hidden;
+   overflow-y:scroll;
    max-height:400px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+   width:2vw;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+   background-color:var(--gray);
+   height:10px !important;
+}
+.table-wrapper::-webkit-scrollbar-thumb{
+   filter:brightness(80%);
+}
+.table-wrapper::-webkit-scrollbar-track{
+   background-color:#EBECEE;
+}
+
+.table-wrapper::-webkit-scrollbar-button{
+   display:none;
 }
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);
