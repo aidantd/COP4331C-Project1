@@ -152,6 +152,7 @@ function showAllContacts() {
 					"</td><td>"
 					html += "<button type='button' class='btn-green' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
 					html += "<button type='button' class='btn-green' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
+					html += "<button type='button' class='btn-red' style='display: none' id='cancelButton[" + i + "]' onclick='cancelContact(" + i + "," + jsonObject.results[i].id + ")'>Cancel</button>"
 					html += "<button type='button' class='btn-red' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
@@ -198,6 +199,7 @@ function searchContact() {
 					"</td><td>"
 					html += "<button type='button' class='btn-green' id='editButton[" + i + "]' onclick='editContact(" + i + ")'>Edit</button>";
 					html += "<button type='button' class='btn-green' style='display: none' id='saveButton[" + i + "]' onclick='saveContact(" + i + "," + jsonObject.results[i].id + ")'>Save</button>"
+					html += "<button type='button' class='btn-red' style='display: none' id='cancelButton[" + i + "]' onclick='cancelContact(" + i + "," + jsonObject.results[i].id + ")'>Cancel</button>"
 					html += "<button type='button' class='btn-red' id='deleteButton[" + i + "]' onclick='deleteContact(" + i + ")'>Delete</button></td></tr></tbody>";
 				}
 				html += "</table></div></section>";
@@ -338,6 +340,21 @@ function saveContact(num, id) {
     } catch (err) {
         console.log(err.message);
     }
+}
+
+function cancelContact(num) {
+	let firstName = document.getElementById("firstName[" + num + "]").value;
+	let lastName = document.getElementById("lastName[" + num + "]").value;
+	let phone = document.getElementById("phoneNumber[" + num + "]").value;
+	let email = document.getElementById("email[" + num + "]").value;
+
+	document.getElementById("firstName[" + num + "]").innerHTML = firstName;
+	document.getElementById("lastName[" + num + "]").innerHTML = lastName;
+	document.getElementById("phoneNumber[" + num + "]").innerHTML = phone;
+	document.getElementById("email[" + num + "]").innerHTML = email;
+
+	document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+	document.getElementById("saveButton[" + num + "]").style.display = "none";
 }
 
 /**allow movement for slider+login/reg forms*/
