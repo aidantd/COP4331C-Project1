@@ -132,6 +132,9 @@ body.about{
 .btn-blue-navy:hover{
    filter: brightness(120%);
 }
+.btn-green:hover, .btn-red:hover{
+   filter: brightness(80%);
+}
 
 /*login reg buttons at top (should probably change to ids)*/
 .btn-topbtns, #registerButton{
