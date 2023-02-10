@@ -289,6 +289,8 @@ function deleteContact(num) {
 
 function editContact(num) {
     document.getElementById("editButton[" + num + "]").style.display = "none";
+	document.getElementById("deleteButton[" + num + "]").style.display = "none";
+	document.getElementById("cancelButton[" + num + "]").style.display = "inline-block";
     document.getElementById("saveButton[" + num + "]").style.display = "inline-block";
 
     var firstNameVal = document.getElementById("firstName[" + num + "]");
@@ -354,7 +356,9 @@ function cancelContact(num) {
 	document.getElementById("email[" + num + "]").innerHTML = email;
 
 	document.getElementById("editButton[" + num + "]").style.display = "inline-block";
+	document.getElementById("deleteButton[" + num + "]").style.display = "inline-block";
 	document.getElementById("saveButton[" + num + "]").style.display = "none";
+	document.getElementById("cancelButton[" + num + "]").style.display = "none";
 }
 
 /**allow movement for slider+login/reg forms*/
