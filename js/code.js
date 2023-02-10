@@ -259,7 +259,7 @@ function deleteContact(num) {
 	if (check != true) {
         return;
     }
-	document.getElementById("row[" + num + "]").outerText = "";
+	document.getElementById("row[" + num + "]").innerHTML = "";
 
 	let tmp = {firstName: firstName, lastName: lastName,userID: userId};
 	let jsonPayload = JSON.stringify(tmp);
