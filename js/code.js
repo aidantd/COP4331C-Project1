@@ -439,52 +439,53 @@ function clearAddContact() {
 
 function validRegister(firstNameTest, lastNameTest, usernameTest, passwordTest) {
 	let html = "";
-	let registerErr = true;
+	let registerErr = false;
 	if(firstNameTest == "") {
     	console.log("FIRST NAME IS BLANK");
 		html += "<li>First Name is blank</li>";
+		registerErr = true;
     }
     else {
         console.log("first name IS VALID");
-        registerErr = false;
     }
 
     if(lastNameTest == "") {
         console.log("LAST NAME IS BLANK");
 		html += "<li>Last Name is blank</li>";
+		registerErr = true;
     }
     else {
         console.log("LAST name IS VALID");
-        registerErr = false;
     }
 	if(usernameTest == "") {
 		console.log("USERNAME IS BLANK");
 		html += "<li>Username is blank</li>";
+		registerErr = true;
 	}
 	else {
 		console.log("USERNAME IS VALID");
-		registerErr = false;
 	}
 	if(passwordTest == "") {
 		console.log("PASSWORD IS BLANK");
 		html += "<li>Password is blank</li>";
+		registerErr = true;
 	}
 	else {
 		let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 		if(pattern.test(passwordTest) == false) {
 			console.log("PASSWORD IS NOT VALID");
 			html += "<li>Password must contain 1 uppercase, 1 lowercase, 1 number, and be between 6-20 characters</li>";
+			registerErr = true;
 		}
 		else {
 			console.log("PASSWORD IS VALID");
-			passErr = false;
 		}
 	}
 
 	document.getElementById("registration-errors").innerHTML = html;
 
 	if(registerErr == true) {
-		return false;
+		return true;
 	}
-	return true;
+	return false;
 }
