@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size:20px">
+<html lang="en" style="font-size:20px">
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
@@ -12,7 +12,7 @@
     </head>
     
     <body class="login">
-      <header class="bg-blue py-2 mb-3">
+      <header class="bg-blue-gradient py-2 mb-3">
          <div class="container-xxl text-center">
             <img src="assets/title.png" alt="pocket pals title">
             <h2 class="h2">GOTTA CALL 'EM ALL</h2>
@@ -29,8 +29,8 @@
                <div class="regbuttons">
                   <!--<div id="sliderbtn"></div>-->
                   <!--<button type="button" class="btn btn-slider" id="slide"></button>-->
-                  <button type="button" class="btn-blue btn-topbtns" onclick="moveleft()" >Register</button>
-                  <button type="button" class="btn-blue btn-topbtns" onclick="moveright()">Login</button>
+                  <button type="button" class="btn-blue-navy btn-topbtns" onclick="moveleft()" >Register</button>
+                  <button type="button" class="btn-blue-navy btn-topbtns" onclick="moveright()">Login</button>
                </div>
             </div>
             <div class="card card-body" id="forms">
@@ -39,7 +39,7 @@
                   <div class="form-group mb-3 text-center" id="loginform">
                      <input id="usernameLogin" type="text" class="form-control" placeholder="username" name="username" required>
                      <input id="passwordLogin" type="password" class="form-control" placeholder="password" name="password" required>
-                     <button id="loginButton" type="button" class="btn btn-blue-navy mt-3" onclick="login()">Login</button>
+                     <button id="loginButton" type="button" class="btn-blue-navy mt-3" onclick="login()">Login</button>
                      <span id="loginResult"></span>
                   </div>
                </form> 
@@ -50,7 +50,7 @@
                      <input id="lastName" type="text" class="form-control" placeholder="Last Name" name="Last Name" required>
                      <input id="newUserName" type="text" class="form-control" placeholder="username" name="username" required>
                      <input id="newPassword" type="password" class="form-control" placeholder="password" name="password" required>
-                     <button class="btn btn-blue-navy mt-3" id="registerButton" type="button" onclick="register()">Register</button>
+                     <button type="button" class="btn-blue-navy mt-3" id="registerButton"  onclick="register()">Register</button>
                   </div>
                </form>
                <span id="registerStatus"></span> 

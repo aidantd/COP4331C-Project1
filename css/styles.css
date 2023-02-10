@@ -1,8 +1,10 @@
 :root{
    --blue:#6A92F2;
    --blue-navy:#5b7cc8;
+   --blue-light:#9CD7F9;
    --off-white:#F5F5F5;
    --gray-light:#C8C9C8;
+   --red:#D1443B;
 }
 
 /* fonts */
@@ -23,6 +25,7 @@ body{
 h1{
    font-family: 'pokemonFont' !important;
    font-size:2.2rem !important;
+
 }
 
 h2{
@@ -53,7 +56,7 @@ h6{
 
 body.login{
    background-image:url('../assets/login_background.jpg') !important;
-   background-size:cover;
+   background-size:auto;
    background-repeat:no-repeat;
    overflow:hidden;
 }
@@ -76,6 +79,10 @@ body.about{
 }
 .bg-blue-navy{
    background-color:var(--blue-navy) !important;
+}
+
+.bg-blue-gradient{
+   background: linear-gradient(var(--blue-navy) 15%, var(--blue) 30%, var(--blue-light) 75%, var(--blue)) !important;
 }
 
 .bi-box-arrow-right, .bi-telephone-inbound{
@@ -117,18 +124,17 @@ body.about{
 .btn-blue{
    background:#5b7cc8 !important;
    color:black !important;
-   border:3px double black;
+   border:5px double black;
    border-radius:7px;
    
 }
 
-.btn-blue:hover{
+.btn-blue-navy:hover{
    filter: brightness(120%);
 }
 
 /*login reg buttons at top (should probably change to ids)*/
-.btn-topbtns {
-   background: var(--blue-navy) !important;
+.btn-topbtns, #registerButton{
    color: white !important;
    width: 115px;
 }
@@ -205,4 +211,9 @@ body.about{
 /* table styling */
 .contact-table{
    background-color: rgba(128, 128, 128, 0.6);;
+}
+
+/* input fields */
+input::placeholder{
+   font-size:1.5rem;
 }
