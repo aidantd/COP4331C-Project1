@@ -207,21 +207,26 @@ body.about{
 }
 /* fonts */
 
-@media (min-width: 1921px){
-   body.home{
-      background:url('../assets/home_background_original.jpg');
-      background-size:cover;
-      background-repeat:no-repeat;
-      overflow:hidden;
-   }
-}
+
 
 /* table styling */
 .contact-table{
-   background-color: rgba(128, 128, 128, 0.6);;
+   background-color: rgba(128, 128, 128, 0.6);
+   max-height:800px;
+   max-width:50vw;
+   overflow-y:scroll;
 }
 
 /* input fields */
 input::placeholder{
    font-size:1.5rem;
+}
+
+@media (min-width: 1921px){
+   body.home{
+      background-image:url('../assets/home_background_original.jpg');
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow:hidden;
+   }
 }
