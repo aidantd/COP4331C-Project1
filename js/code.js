@@ -434,4 +434,5 @@ function clearAddContact() {
 	document.getElementById("contact-info-name-last").value = "";
 	document.getElementById("contact-info-phone").value = "";
 	document.getElementById("contact-info-email").value = "";
+	document.getElementById("contactAddStatus").value = "";
 }
