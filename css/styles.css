@@ -79,9 +79,10 @@ body.about{
    background-image:url('../assets/about_background.png') !important;
    background-size:cover;
    overflow-x:hidden;
-
 }
-
+html::-webkit-scrollbar{
+   display:none;
+}
 /* background stylings */
 .bg-blue{
    background-color:var(--blue) !important; 
@@ -303,6 +304,7 @@ input::placeholder, input{
 }
 #register-form> input{
    min-height: 10% !important;
+   max-height:30px;
    margin:0;
 }
 
