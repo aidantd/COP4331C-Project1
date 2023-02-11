@@ -154,7 +154,7 @@ html::-webkit-scrollbar{
 /*login reg buttons at top (should probably change to ids)*/
 .btn-topbtns, #registerButton, #loginButton{
    color: white !important;
-   width: 115px;
+   min-width: 115px;
 }
 
 .btn-close{
