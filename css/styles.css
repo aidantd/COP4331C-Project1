@@ -379,6 +379,10 @@ input::placeholder, input{
    #forms{
       max-height:40vh !important;
    }
+   .table-wrapper{
+      max-height:600px;
+   }
+
 }
 @media (max-aspect-ratio:5/8){
    body{
