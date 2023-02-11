@@ -250,7 +250,7 @@ html::-webkit-scrollbar{
 /* table styling */
 .table-wrapper{
    overflow-y:scroll;
-   max-height:400px;
+   max-height:40vh;
 }
 
 .table-wrapper::-webkit-scrollbar {
@@ -380,7 +380,7 @@ input::placeholder, input{
       max-height:40vh !important;
    }
    .table-wrapper{
-      max-height:600px;
+      max-height:60vh;
    }
 
 }
