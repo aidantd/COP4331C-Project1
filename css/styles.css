@@ -384,6 +384,7 @@ input::placeholder, input{
       font-size:1.5rem !important;
    }
    body.home{
+      background-color:#68A05F;
       background-image:url('../assets/home_background_mobile.jpg') !important;
       background-size:cover;
       background-repeat:no-repeat;
