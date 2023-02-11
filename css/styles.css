@@ -250,7 +250,7 @@ html::-webkit-scrollbar{
 /* table styling */
 .table-wrapper{
    overflow-y:scroll;
-   max-height:40vh;
+   max-height:50vh;
 }
 
 .table-wrapper::-webkit-scrollbar {
