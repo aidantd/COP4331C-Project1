@@ -215,10 +215,10 @@ html::-webkit-scrollbar{
    border:6px dashed black !important;
 }
 
-#add-info > input:focus{
-   border-color: rgba(240, 72, 72, 0.8);
-   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(240, 72, 72, 0.8);
-   outline: 0 none;
+#add-info > input:focus, #forms input:focus{
+   border-color: rgba(240, 72, 72, 0.8) !important;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(240, 72, 72, 0.8) !important;
+   outline: 0 none !important;
 }
 
 /*spacing and sizing for forms in login/reg page*/
