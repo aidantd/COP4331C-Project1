@@ -164,7 +164,7 @@ html::-webkit-scrollbar{
 
 #forms {
    background: rgb(143, 143, 143, 80%) !important;
-   min-height: 65vh;
+   height: 40vh;
    top: 20px;
    border-radius: 10px;
    border: 3px double black;
@@ -290,6 +290,9 @@ input::placeholder, input{
    font-size:1.5rem !important;
 }
 
+#add-info input{
+   margin:0;
+}
 
 /* log in page */
 #input-message{
@@ -329,25 +332,6 @@ input::placeholder, input{
 /* navb */
 
 
-@media (max-aspect-ratio:16/9){
-   body.home{
-      background-image:url('../assets/home_background_original.jpg') !important;
-      background-size:cover;
-      background-repeat:no-repeat;
-      overflow-x:hidden;
-   }
-}
-@media (max-aspect-ratio:9/20){
-   body{
-      font-size:1.5rem !important;
-   }
-   body.home{
-      background-image:url('../assets/home_background_mobile.jpg') !important;
-      background-size:cover;
-      background-repeat:no-repeat;
-      overflow-x:hidden;
-   }
-}
 
 /* about page */
 #credit-box{
@@ -382,4 +366,30 @@ input::placeholder, input{
    width:100%;
    color:white;
    border-bottom:5px solid white;
+}
+
+@media (max-aspect-ratio:16/9){
+   body.home{
+      background-image:url('../assets/home_background_original.jpg') !important;
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow-x:hidden;
+   }
+   #forms{
+      max-height:40vh !important;
+   }
+}
+@media (max-aspect-ratio:9/20){
+   body{
+      font-size:1.5rem !important;
+   }
+   body.home{
+      background-image:url('../assets/home_background_mobile.jpg') !important;
+      background-size:cover;
+      background-repeat:no-repeat;
+      overflow-x:hidden;
+   }
+   #forms{
+      max-height:40vh !important;
+   }
 }
