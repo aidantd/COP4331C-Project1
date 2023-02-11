@@ -380,7 +380,7 @@ input::placeholder, input{
       max-height:40vh !important;
    }
 }
-@media (max-aspect-ratio:3/2){
+@media (max-aspect-ratio:3/4){
    body{
       font-size:1.5rem !important;
    }
