@@ -302,14 +302,15 @@ input::placeholder, input{
    align-items:center;
    height:80% !important;
 }
-#register-form> input{
-   min-height: 10% !important;
-   max-height:30px;
+#register-form input{
+   height: 10% !important;
+   max-height: 40px !important;
    margin:0;
 }
 
-#loginform> input{
-   min-height: 15% !important;
+#loginform input{
+   height: 15% !important;
+   max-height:50px !important;
 }
 
 #registration-errors ul, #error-list > ul{
