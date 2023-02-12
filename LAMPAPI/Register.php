@@ -13,22 +13,7 @@
 	} 
 	else
 	{
-		
-		$stmt = $conn->prepare("select * from Users where (Login like ?)");
-		$checkLogin = "%" . $login . "%";
-
-		$stmt->bind_param("s", $checkLogin);
-		$stmt->execute;
-
-		$result = $stmt->$get_result();
-
-		if($row = $result ->fetch_assoc())
-		{
-			returnWithError("Username already exists")
-		}
-		else
-		{
-			// Prepares and executes mySQL statement to add binded input parameters of a new 
+		// Prepares and executes mySQL statement to add binded input parameters of a new 
 		// User into Users Database's respective columns.
 		$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?, ?, ?, ?)");
 
@@ -37,7 +22,6 @@
 		$stmt->close();
 		$conn->close();
 		returnWithError("");
-		}
 	}
 
 	function getRequestInfo()
