@@ -492,6 +492,6 @@ function validRegister(firstNameTest, lastNameTest, usernameTest, passwordTest) 
 
 function clearSearch()
 {
-   document.getElementById("search").value="";
+   document.getElementById("searchUser").value="";
    showAllContacts();
 }
