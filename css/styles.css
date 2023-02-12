@@ -57,7 +57,7 @@ html{
 html::-webkit-scrollbar{
    display:none;
 }
-html input[input="search"]::-webkit-search-cancel-button{
+input[type="search"]::-webkit-search-cancel-button{
    -webkit-appearance:none;
    display:none;
 }
