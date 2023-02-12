@@ -489,3 +489,9 @@ function validRegister(firstNameTest, lastNameTest, usernameTest, passwordTest) 
 	}
 	return true;
 }
+
+function clearSearch()
+{
+   document.getElementById("search").value="";
+   showAllContacts();
+}

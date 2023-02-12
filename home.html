@@ -68,21 +68,13 @@
       <div class="container-lg">
          <div class="text-center pt-3" id="search-group">
             <form>
-               <div class="input-group">
-                  <label for="search" class="pb-2">
-                     <span class="h2">Search For Contact</span>
-                  </label>
-                  <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info" onkeyup="searchContact();">
-                  <button type="button" class="btn bg-transparent" id="search-clear-button" style="margin-left: -40px; z-index: 100;">
-                     <img src="assets/close-button.png" alt="clear search button">
-                   </button>
-                  <script>
-                     document.getElementById("search-button").addEventListener("click", function(){
-                         event.preventDefault();
-
-                     });
-                  </script>
-               </div>
+               <label for="search" class="pb-2">
+                  <span class="h2">Search For Contact</span>
+               </label>
+               <input type="search" name="search" id="searchUser" class="form-control inline-block" placeholder="contact info" onkeyup="searchContact();">
+               <button type="button" class="btn bg-transparent" id="search-clear-button" onclick="clearSearch();">
+                  <img src="assets/close-button.png" class="icon-md" alt="clear search button">
+                  </button>
             </form>
          </div>
          
