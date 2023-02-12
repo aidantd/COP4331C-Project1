@@ -13,15 +13,32 @@
 	} 
 	else
 	{
-		// Prepares and executes mySQL statement to add binded input parameters of a new 
-		// User into Users Database's respective columns.
-		$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?, ?, ?, ?)");
+		
+		$sqlsearch = "SELECT * FROM Users WHERE Login=?";
+        $stmt = $conn->prepare($sqlsearch);
+        $stmt->bind_param("s", $login);
+        $stmt->execute();
 
-		$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
-		$stmt->execute();
-		$stmt->close();
-		$conn->close();
-		returnWithError("");
+        $result = $stmt->get_result();
+		
+		if ( $row = $result->fetch_assoc() )
+		{
+            $stmt->close();
+            $conn->close();
+            returnWithError("Username Taken");
+		}
+		else
+		{
+            // Prepares and executes mySQL statement to add binded input parameters of a new 
+            // User into Users Database's respective columns.
+            $stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?, ?, ?, ?)");
+
+            $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
+            returnWithError("");
+		}
 	}
 
 	function getRequestInfo()
