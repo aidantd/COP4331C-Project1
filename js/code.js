@@ -27,6 +27,10 @@ function register() {
         xhr.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 let jsonObject= JSON.parse( xhr.responseText);
+				if(jsonObject.error == "Username Taken") {
+					document.getElementById("registerStatus").innerHTML = "Username Taken";
+					return;
+				}
                 document.getElementById("registerStatus").innerHTML = "Successfully Registered Please Login";
                 return;
             }
