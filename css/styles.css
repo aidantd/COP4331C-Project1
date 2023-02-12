@@ -49,11 +49,14 @@ h6{
    font-size:1.2rem !important;
 }
 
+
+/* upper level tags */
 html{
    font-size:16px !important;
 }
-
-
+html::-webkit-scrollbar{
+   display:none;
+}
 
 body{
    overflow-x:hidden;
@@ -80,9 +83,8 @@ body.about{
    background-size:cover;
    overflow-x:hidden;
 }
-html::-webkit-scrollbar{
-   display:none;
-}
+
+
 /* background stylings */
 .bg-blue{
    background-color:var(--blue) !important; 
@@ -93,7 +95,6 @@ html::-webkit-scrollbar{
 
 .bg-black-gradient{
    background-color: rgba(10, 10, 10, .55);
-
 }
 
 .bg-blue-gradient{
@@ -104,16 +105,6 @@ html::-webkit-scrollbar{
    background: transparent;
    color:white;
 }
-
-
-/*slider at top, fixing right now*/
-/*.btn-slider {
-   background: rgba(91,156,233,0.8) !important;
-   width: 10%;
-   height: 5%;
-   position: absolute;
-   transition: .5s;
-}*/
 
 /* buttons */
 .btn-blue-navy{
@@ -162,6 +153,7 @@ html::-webkit-scrollbar{
 }
 
 
+/************************ Log in Page ************************/
 #forms {
    background: rgb(143, 143, 143, 80%) !important;
    height: 55vh;
@@ -184,50 +176,16 @@ html::-webkit-scrollbar{
    display:none;
 }
 
-
-/* icons */
-.icon-md{
-   max-width:50px;
-   font-size:30px;
-}
-
-#catchphrase{
-   padding:3px 3px;
-   max-width:250px;
-   margin:0 auto;
-   background-color: var(--red);
-   border: 5px solid black;
-   border-radius:15px;
-   opacity:80%;
-
-}
-/* navbar */
-.nav-brand:hover{
-   filter: brightness(150%)
-}
-.nav-link:hover{
-   text-decoration:underline;
-}
-
-/* modal */
-.modal-content{
-   border:6px dashed black !important;
-}
-
-#add-info > input:focus, #forms input:focus{
-   border-color: rgba(240, 72, 72, 0.8) !important;
-   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(240, 72, 72, 0.8) !important;
-   outline: 0 none !important;
-}
-
 /*spacing and sizing for forms in login/reg page*/
 #usernameLogin, #passwordLogin, #firstName, #lastName, #newUserName, #newPassword {
    margin: 1.5%;
    width: 97%;
 }
-
-
-
+#add-info > input:focus, #forms input:focus{
+   border-color: rgba(240, 72, 72, 0.8) !important;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(240, 72, 72, 0.8) !important;
+   outline: 0 none !important;
+}
 
 /*moves login off screen to start and allows it to move when clicked*/
 #loginform {
@@ -245,6 +203,65 @@ html::-webkit-scrollbar{
    transition: .5s;
    left: 0%;
 }
+
+
+/* icons styling */
+.icon-md{
+   max-width:50px;
+   font-size:30px;
+}
+
+#catchphrase{
+   padding:3px 3px;
+   max-width:250px;
+   margin:0 auto;
+   background-color: var(--red);
+   border: 5px solid black;
+   border-radius:15px;
+   opacity:80%;
+
+}
+
+/* log in page */
+
+#register-form, #loginform{
+   display:flex;
+   flex-direction:column;
+   justify-content:start;
+   align-items:center;
+   height:80% !important;
+}
+#register-form input{
+   height: 10% !important;
+   max-height: 40px !important;
+   margin:0;
+}
+
+#loginform input{
+   height: 15% !important;
+   max-height:50px !important;
+}
+
+#registration-errors ul, #error-list > ul{
+   list-style:circle;
+}
+
+#registration-errors li, #error-list > li{
+   display:inline;
+   color:red;
+   font-weight:bold;
+   padding:0 10px;
+}
+#loginResult{
+   color:red;
+   font-weight:bold;
+}
+#registration-errors li:not(:last-child), #registration-errors li, #error-list > li:not(:last-child){
+   border-right:3px solid black;
+}
+
+
+/***************** Home page Stuff  ******************************/
 
 /* table styling */
 .table-wrapper{
@@ -294,50 +311,8 @@ input::placeholder, input{
    margin:0;
 }
 
-/* log in page */
-#input-message{
-}
 
-#register-form, #loginform{
-   display:flex;
-   flex-direction:column;
-   justify-content:start;
-   align-items:center;
-   height:80% !important;
-}
-#register-form input{
-   height: 10% !important;
-   max-height: 40px !important;
-   margin:0;
-}
-
-#loginform input{
-   height: 15% !important;
-   max-height:50px !important;
-}
-
-#registration-errors ul, #error-list > ul{
-   list-style:circle;
-}
-
-#registration-errors li, #error-list > li{
-   display:inline;
-   color:red;
-   font-weight:bold;
-   padding:0 10px;
-}
-#loginResult{
-   color:red;
-   font-weight:bold;
-}
-#registration-errors li:not(:last-child), #registration-errors li, #error-list > li:not(:last-child){
-   border-right:3px solid black;
-}
-/* navb */
-
-
-
-/* about page */
+/************************** About page *****************************/
 #credit-box{
    border-radius:10px;
 }
@@ -372,6 +347,21 @@ input::placeholder, input{
    border-bottom:5px solid white;
 }
 
+/****************** Bootstrap elemetn styling **********************/
+/* navbar */
+.nav-brand:hover{
+   filter: brightness(150%)
+}
+.nav-link:hover{
+   text-decoration:underline;
+}
+
+/* modal */
+.modal-content{
+   border:6px dashed black !important;
+}
+
+/************* Media Queries ***********************************/
 @media (max-aspect-ratio:16/9){
    body.home{
       background-image:url('../assets/home_background_original.jpg') !important;
