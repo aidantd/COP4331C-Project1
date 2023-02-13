@@ -139,7 +139,7 @@ function showAllContacts() {
 				let jsonObject = JSON.parse(xhr.responseText);
 				let html = "";
 				if(jsonObject.id == 0) {
-					html += "<section id=\"infoWindow\"><div class=\"container-lg text-center mb-4\"><table class=\"table contact-table\" id=\"contact-table\">"
+					html += "<section id=\"infoWindow\"><div class=\"container-lg text-center m-0 p-0\"><table class=\"table contact-table\" id=\"contact-table\">"
 					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 					html += "</table></div></section>";
 					document.getElementById("allContactInfo").innerHTML = html;
