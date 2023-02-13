@@ -145,7 +145,7 @@ function showAllContacts() {
 					document.getElementById("allContactInfo").innerHTML = html;
 					return;
 				}
-				html += "<section id=\"infoWindow\"><div class=\"container text-center\"><table class=\"table contact-table\" id=\"contact-table\">"
+				html += "<section id=\"infoWindow\"><div class=\"container-lg text-center\"><table class=\"table contact-table\" id=\"contact-table\">"
 				html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					html += "<tbody><tr id='row[" + i + "]'><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
@@ -186,13 +186,13 @@ function searchContact() {
 				let jsonObject = JSON.parse(xhr.responseText);
 				let html = "";
 				if(jsonObject.id == 0) {
-					html += "<section id=\"infoWindow\"><div class=\"container text-center\"><table class=\"table\" id=\"contact-table\">"
+					html += "<section id=\"infoWindow\"><div class=\"container-lg text-center\"><table class=\"table\" id=\"contact-table\">"
 					html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 					html += "</table></div></section>";
 					document.getElementById("allContactInfo").innerHTML = html;
 					return;
 				}
-				html += "<section id=\"infoWindow\"><div class=\"container text-center\"><table class=\"table contact-table\" id=\"contact-table\">"
+				html += "<section id=\"infoWindow\"><div class=\"container-lg text-center\"><table class=\"table contact-table\" id=\"contact-table\">"
 				html += "<thread><tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Actions</th></tr></thread>";
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					html += "<tbody><tr id='row[" + i + "]'><td id='firstName["  + i + "]'>" + jsonObject.results[i].firstName + 
