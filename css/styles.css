@@ -381,6 +381,7 @@ input::placeholder, input{
    }
    .table-wrapper{
       max-height:60vh;
+      text-align:center;
    }
 
 }
