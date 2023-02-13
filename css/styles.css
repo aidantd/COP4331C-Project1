@@ -223,7 +223,7 @@ body.about{
    border: 5px solid black;
    border-radius:15px;
    opacity:80%;
-
+   font-weight:bold;
 }
 
 /* log in page */
