@@ -253,12 +253,12 @@ body.about{
 
 #registration-errors li, #error-list > li{
    display:inline;
-   color:red;
+   color:black;
    font-weight:bold;
    padding:0 10px;
 }
 #loginResult, #registerStatus{
-   color:red;
+   color:black;
    font-weight:bold;
 }
 #registration-errors li:not(:last-child), #error-list  li:not(:last-child){
