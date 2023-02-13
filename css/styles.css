@@ -274,6 +274,7 @@ body.about{
 .table-wrapper{
    overflow-y:scroll;
    max-height:50vh;
+   text-align:center;
 }
 
 .table-wrapper::-webkit-scrollbar {
@@ -381,7 +382,6 @@ input::placeholder, input{
    }
    .table-wrapper{
       max-height:60vh;
-      text-align:center;
    }
 
 }
