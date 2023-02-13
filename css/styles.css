@@ -246,8 +246,9 @@ body.about{
    max-height:50px !important;
 }
 
-#registration-errors ul, #error-list > ul{
-   list-style:circle;
+#registration-errors, #error-list{
+   list-style:none;
+   padding:0;
 }
 
 #registration-errors li, #error-list > li{
@@ -260,12 +261,10 @@ body.about{
    color:red;
    font-weight:bold;
 }
-#registration-errors li:not(:last-child), #registration-errors li, #error-list  li:not(:last-child){
+#registration-errors li:not(:last-child), #error-list  li:not(:last-child){
    border-right:3px solid black;
 }
-#registration-errors li:only-child, #error-list > :only-child{
-   border:none;
-}
+
 
 
 
