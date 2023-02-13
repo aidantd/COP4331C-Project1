@@ -280,6 +280,8 @@ body.about{
 .table-wrapper::-webkit-scrollbar {
    height:1.25vw;
    width:1.25vw;
+   min-width:10px;
+   min-height:10px;
 }
 
 .table-wrapper::-webkit-scrollbar-thumb{
